@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #f50f0b;
+  --color-olive: #697548;
+}
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #fff;
+  background: #111511;
+}
+body { margin: 0; }
+.app-shell { padding: 8%; }
