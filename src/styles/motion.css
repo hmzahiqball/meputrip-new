@@ -14,7 +14,7 @@
 .reveal:focus-within {
   opacity: 1;
   transform: none;
-  transition-delay: 0ms;
+  transition: none;
 }
 .destination-grid > .reveal:nth-child(3n + 2),
 .trip-grid > .reveal:nth-child(4n + 2),

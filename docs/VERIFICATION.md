@@ -47,3 +47,16 @@ Saat pengembangan, browser development sempat kehilangan koneksi setelah restart
 - `git diff --check`: tidak ada masalah whitespace pada perubahan tracked.
 - `node_modules`, `dist`, `.env.local`, `.env.production`, dan `*.tsbuildinfo` diabaikan; `.env.example` dilacak.
 - Pemeriksaan pola private key dan token umum tidak menemukan credential pada source tracked. Tidak ada perubahan konten/fungsi aplikasi dalam tahap penambahan Git history.
+
+## Verifikasi animasi — 27 Oktober 2026
+
+- Build TypeScript strict dan Vite berhasil untuk animasi komponen dan peta. Tidak ada dependency runtime tambahan.
+- 18 pengujian data/repository tetap lulus.
+- Browser production: map masuk state visible; delapan pulau memakai keyframe island-emerge dengan stagger geografis 0–840ms; heading memiliki delay 1.65s.
+- Jawa → Yogyakarta tetap terpilih setelah tombol replay; frame awal replay memiliki opacity parsial, lalu pulau kembali terlihat penuh.
+- Kartu katalog berubah dari pending ke visible saat masuk viewport; opacity akhirnya 1 dengan transisi 650ms dan stagger kartu berikutnya.
+- Dialog detail tetap terbuka dengan keyframe dialog-enter; Escape tetap menutupnya.
+- Reduced motion diverifikasi dari aturan CSS dan jalur fallback hook; preferensi OS tidak diubah dalam pemeriksaan ini.
+- Browser mobile 390×844: replay mempertahankan Ubud, durasi pulau 700ms, dan tidak ada overflow horizontal. Petunjuk sekunder disembunyikan di mobile agar tombol replay memiliki ruang.
+- Reveal katalog tetap visible saat navigasi berpindah ke open trip; baris open trip yang masuk viewport menjadi visible, sementara yang di luar viewport menunggu giliran.
+- Pemeriksaan fokus keyboard pada kartu: opacity langsung 1 dan transition-property none. Console error aplikasi kosong pada pemeriksaan akhir.

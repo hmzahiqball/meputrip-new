@@ -283,9 +283,6 @@ section {
   display: block;
   overflow: visible;
 }
-.island-group {
-  animation: island-reveal 1.1s both cubic-bezier(0.2, 0.7, 0.2, 1);
-}
 .island {
   fill: #ced1c7;
   stroke: #f4f4ee;
@@ -1263,18 +1260,6 @@ footer {
 }
 .hero-heading {
   animation: heading-reveal 1s 0.75s both;
-}
-@keyframes island-reveal {
-  from {
-    opacity: 0;
-    filter: blur(7px);
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
 }
 @keyframes heading-reveal {
   from {

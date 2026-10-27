@@ -118,3 +118,5 @@ npm run dev
 History awal dipisahkan berdasarkan tanggung jawab: setup React/Vite, model data dan adapter Sheets, explorer peta dan katalog, fitur travel dan company profile, lalu dokumentasi dan template CMS.
 
 Untuk perubahan berikutnya, buat branch dari `main`, kelompokkan perubahan terkait dalam commit terpisah (`feat`, `fix`, `docs`, atau `chore`), lalu jalankan `npm test` dan `npm run build` sebelum push. Jangan commit `node_modules`, `dist`, `.env*` selain `.env.example`, atau credential privat. `.gitattributes` menormalkan source text menjadi LF agar diff lintas Windows/Linux tetap bersih.
+
+Panduan animasi komponen, urutan reveal peta, tombol replay, dan reduced motion: [docs/MOTION.md](docs/MOTION.md).
