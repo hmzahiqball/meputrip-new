@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import type { Destination, City } from "../types/travel";
 export default function DestinationCard({
@@ -10,7 +11,7 @@ export default function DestinationCard({
   onDetail: () => void;
 }) {
   return (
-    <article className="destination-card">
+    <Reveal as="article" className="destination-card">
       <button
         className="destination-image"
         onClick={onDetail}
@@ -37,6 +38,6 @@ export default function DestinationCard({
         <h3>{destination.name}</h3>
       </button>
       <p>{destination.description}</p>
-    </article>
+    </Reveal>
   );
 }

@@ -1,3 +1,4 @@
+import Reveal from "../components/Reveal";
 import { useState } from "react";
 import {
   ArrowUpRight,
@@ -74,7 +75,7 @@ export default function Explorer({
           selected={regionId}
           onSelect={selectRegion}
         />
-        <div className="region-selection" id="pilih-wilayah">
+        <Reveal className="region-selection" id="pilih-wilayah">
           <span className="eyebrow step-label">01 / PILIH PULAU</span>
           <div
             className="region-buttons"
@@ -93,8 +94,8 @@ export default function Explorer({
               </button>
             ))}
           </div>
-        </div>
-        <div className="journey-panel">
+        </Reveal>
+        <Reveal className="journey-panel">
           <div className="journey-description" aria-live="polite">
             <span className="panel-number">{region ? "02" : "↗"}</span>
             <div>
@@ -145,10 +146,10 @@ export default function Explorer({
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
       <section className="section destinations" id="destinasi">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow olive">THE PLACES THAT STAY WITH YOU</p>
             <h2>
@@ -163,8 +164,8 @@ export default function Explorer({
             <ArrowLeft size={15} />{" "}
             {region ? "Ganti pulau" : "Jelajahi lewat peta"}
           </a>
-        </div>
-        <div className="catalog-toolbar">
+        </Reveal>
+        <Reveal className="catalog-toolbar">
           <div className="filters" aria-label="Filter kategori">
             <SlidersHorizontal size={16} />
             {categories.map((c) => (
@@ -186,7 +187,7 @@ export default function Explorer({
                 ? `di ${region.name}`
                 : "untuk dijelajahi"}
           </span>
-        </div>
+        </Reveal>
         {!region && (
           <p className="catalog-note">
             Pilihan inspirasi dari seluruh Indonesia. Pilih pulau dan kota di

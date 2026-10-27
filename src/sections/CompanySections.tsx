@@ -1,3 +1,4 @@
+import Reveal from "../components/Reveal";
 import { useState } from "react";
 import {
   ArrowUpRight,
@@ -53,7 +54,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
   return (
     <>
       <section className="section trips" id="paket">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow olive">CURATED JOURNEYS</p>
             <h2>
@@ -67,7 +68,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
             <br />
             Semua paket berikut adalah contoh prototype.
           </p>
-        </div>
+        </Reveal>
         <div className="trip-filters" aria-label="Filter paket per wilayah">
           <button
             aria-pressed={filter === "all"}
@@ -89,7 +90,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
         </div>
         <div className="trip-grid">
           {packages.map((p, i) => (
-            <article className="trip-card" key={p.id}>
+            <Reveal as="article" className="trip-card" key={p.id}>
               <button
                 className="trip-photo"
                 onClick={() => onTrip(p)}
@@ -127,7 +128,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
                   </button>
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
         {packages.length === 0 && (
@@ -135,7 +136,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
         )}
       </section>
       <section className="open-trip section" id="open-trip">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow olive">GOOD PLACES, NEW FACES</p>
             <h2>
@@ -149,12 +150,12 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
             <br />
             Jadwal dan ketersediaan berikut belum dikonfirmasi.
           </p>
-        </div>
+        </Reveal>
         <div className="open-trip-list">
           {data.packages
             .filter((p) => p.type === "open")
             .map((p) => (
-              <article key={p.id}>
+              <Reveal as="article" key={p.id}>
                 <img src={p.image} alt={`Ilustrasi ${p.name}`} loading="lazy" />
                 <div className="open-name">
                   <span className="eyebrow olive">OPEN TRIP / CONTOH</span>
@@ -176,7 +177,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
                 >
                   <ArrowUpRight size={23} />
                 </button>
-              </article>
+              </Reveal>
             ))}
         </div>
       </section>
@@ -188,7 +189,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
           loading="lazy"
         />
         <div className="custom-overlay" />
-        <div className="custom-content">
+        <Reveal className="custom-content">
           <p className="eyebrow">MADE FOR YOUR KIND OF ADVENTURE</p>
           <h2>
             Rencana boleh beda.
@@ -209,18 +210,18 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
           <small>
             Demo konsultasi · Tanpa pembayaran atau pemesanan otomatis
           </small>
-        </div>
+        </Reveal>
       </section>
       <section className="section about" id="tentang">
-        <div className="about-image">
+        <Reveal className="about-image">
           <img
             src={photos.bali}
             alt="Foto ilustrasi suasana alam Bali"
             loading="lazy"
           />
           <span className="photo-caption">A LITTLE CLOSER TO INDONESIA.</span>
-        </div>
-        <div className="about-copy">
+        </Reveal>
+        <Reveal className="about-copy">
           <p className="eyebrow olive">KENAL LEBIH DEKAT / DRAFT PROFIL</p>
           <h2>
             Perjalanan baik
@@ -243,10 +244,10 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
           <a className="text-link" href="#kontak">
             Mari berkenalan <ArrowUpRight size={15} />
           </a>
-        </div>
+        </Reveal>
       </section>
       <section className="section values">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow olive">THE WAY WE TRAVEL / DRAFT LAYANAN</p>
             <h2>
@@ -256,21 +257,21 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
             </h2>
           </div>
           <Leaf size={44} strokeWidth={1} />
-        </div>
+        </Reveal>
         <div className="values-grid">
           {advantages.map((v) => (
-            <article key={v.title}>
+            <Reveal as="article" key={v.title}>
               <v.icon size={26} strokeWidth={1.3} />
               <h3>{v.title}</h3>
               <p>{v.text}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
       <section className="section testimonials">
         <p className="eyebrow olive">CERITA PERJALANAN / CONTOH PROTOTYPE</p>
         {data.testimonials.map((t) => (
-          <figure key={t.id}>
+          <Reveal as="figure" key={t.id}>
             <div className="stars" aria-label={`${t.rating} dari 5 bintang`}>
               {Array.from({ length: t.rating }, (_, i) => (
                 <Star key={i} size={15} fill="currentColor" />
@@ -286,10 +287,10 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
                   : "Ulasan dari sumber konten perusahaan."}
               </small>
             </figcaption>
-          </figure>
+          </Reveal>
         ))}
       </section>
-      <section className="section legal" id="legalitas">
+      <Reveal as="section" className="section legal" id="legalitas">
         <div>
           <p className="eyebrow olive">COMPANY INFORMATION</p>
           <h2>Kenali perusahaanmu.</h2>
@@ -300,7 +301,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
         </div>
         <div>
           {data.legal.map((doc) => (
-            <article key={doc.id}>
+            <Reveal as="article" key={doc.id}>
               <ShieldCheck size={22} />
               <div>
                 <h3>{doc.title}</h3>
@@ -316,12 +317,12 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
                   </a>
                 )}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
       <footer id="kontak">
-        <div className="footer-top">
+        <Reveal className="footer-top">
           <div>
             <p className="eyebrow">LET'S MAKE IT A JOURNEY</p>
             <h2>
@@ -337,8 +338,8 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
           >
             <ArrowUpRight size={48} strokeWidth={1} />
           </button>
-        </div>
-        <div className="footer-grid">
+        </Reveal>
+        <Reveal className="footer-grid">
           <div>
             <a href="#home" className="brand">
               <Compass size={27} />
@@ -416,7 +417,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
             </p>
             <p>{data.contact.hours}</p>
           </div>
-        </div>
+        </Reveal>
         <div className="footer-bottom">
           <span>
             © {new Date().getFullYear()} {data.company.name}. Prototype
