@@ -60,3 +60,16 @@ Saat pengembangan, browser development sempat kehilangan koneksi setelah restart
 - Browser mobile 390×844: replay mempertahankan Ubud, durasi pulau 700ms, dan tidak ada overflow horizontal. Petunjuk sekunder disembunyikan di mobile agar tombol replay memiliki ruang.
 - Reveal katalog tetap visible saat navigasi berpindah ke open trip; baris open trip yang masuk viewport menjadi visible, sementara yang di luar viewport menunggu giliran.
 - Pemeriksaan fokus keyboard pada kartu: opacity langsung 1 dan transition-property none. Console error aplikasi kosong pada pemeriksaan akhir.
+
+## Verifikasi zoom pulau dan lokasi — 28 Oktober 2026
+
+- `npm test`: 33 pengujian lulus, termasuk kompatibilitas CSV kota lama, validasi koordinat, framing kamera dan label tanpa tabrakan untuk delapan wilayah pada lebar 320/700/1040px.
+- `npm run build`: TypeScript dan Vite production berhasil, 1600 modul; JS 479.94 kB (gzip 154.70 kB), CSS 40.77 kB (gzip 9.59 kB).
+- Browser production desktop: Jawa membesar, enam titik muncul, Enter pada Yogyakarta membuka dua destinasi yang sesuai.
+- Browser mobile 390×844: klik Banyuwangi membuka Kawah Ijen; klik Ubud membuka katalog Ubud; kembali ke Indonesia memulihkan fokus ke pulau sebelumnya.
+- Delapan wilayah diperiksa: Sumatra 5, Jawa 6, Kalimantan 2, Sulawesi 3, Bali 2, Nusa Tenggara 2, Maluku 2, Papua 2 titik lokasi. Memilih wilayah baru menampilkan prompt pemilihan lokasi, tanpa mempertahankan katalog kota sebelumnya.
+- Bounding rect keenam label Jawa memiliki tinggi 44px; lebar konten 375px sama dengan scrollWidth pada viewport mobile (scrollbar 15px), tanpa overflow horizontal.
+- Fokus setelah zoom dipindahkan ke kontrol kembali; ini juga menghindari outline SVG yang ikut membesar bersama kamera.
+- Console error kosong pada pemeriksaan alur. Screenshot desktop Jawa dan mobile Bali disimpan di outputs chat.
+- Reduced motion diperiksa melalui source CSS dan cabang scroll, bukan perubahan preferensi OS. Pengujian mobile memakai viewport browser, bukan perangkat fisik.
+- Titik hanya mencakup 24 lokasi katalog, bukan seluruh batas administratif kota/kabupaten. Google Sheets live tetap belum dikonfigurasi.

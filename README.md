@@ -26,8 +26,8 @@ Preview production default http://127.0.0.1:4173. `dist/` adalah hasil build sta
 
 1. Tunggu reveal pulau, atau langsung klik/tap peta. Heading muncul setelah jeda singkat tanpa memblokir kontrol.
 2. Pilih satu dari delapan wilayah melalui SVG atau tombol wilayah. Wilayah aktif berwarna merah; nama selalu tersedia sebagai label/tombol.
-3. Dropdown menampilkan kota wilayah tersebut. Pilih kota, lalu gunakan tombol panah untuk berpindah ke katalog.
-4. Katalog dan kategori berubah tanpa reload. Ganti pulau untuk mengganti konteks dan mereset kota/kategori.
+3. Pulau membesar dengan transisi kamera SVG. Titik kota, kabupaten, dan kawasan muncul beserta jumlah destinasi; klik titik untuk membuka katalog lokasi tersebut. Daftar tombol dan dropdown tersedia sebagai alternatif.
+4. Katalog dan kategori berubah tanpa reload. **Ganti kota / kabupaten** kembali ke peta yang diperbesar. **Peta Indonesia** mengembalikan tampilan nasional; memilih pulau baru mereset kota/kategori.
 5. Buka detail destinasi/paket, atau susun konsultasi melalui formulir custom trip.
 
 Peta memiliki keyboard Enter/Space, fokus terlihat, dan tombol pendamping 44px untuk tap pulau kecil. Dropdown memakai elemen select native. Dialog native mendukung Escape dan menahan fokus selama terbuka. CSS menghormati prefers-reduced-motion. Tata letak disesuaikan pada 1100, 760, dan 440px.
@@ -42,6 +42,8 @@ Meputrip/
 │   ├── config/site.ts             # Konfigurasi publik dari VITE_ env
 │   ├── data/mock.ts               # Seluruh data contoh, relasi ID
 │   ├── data/mapPaths.json         # Geometri SVG lokal per wilayah
+│   ├── data/cityLocations.json    # Koordinat lokasi katalog, GeoNames
+│   ├── utils/mapGeometry.ts      # Proyeksi, kamera zoom, tata letak label
 │   ├── hooks/useTravelData.ts     # Load, error, retry, abort
 │   ├── sections/                  # Explorer dan konten perusahaan
 │   ├── services/                  # Repository, parser CSV, validasi, tests
@@ -81,10 +83,12 @@ node scripts/export-sheet-templates.mjs
 
 Periksa siluet dan pengelompokan setelah mengganti dataset. Sumber serta lisensi: [ASSET_SOURCES.md](docs/ASSET_SOURCES.md).
 
+Koordinat 24 lokasi katalog berasal dari GeoNames dan tersimpan lokal di `src/data/cityLocations.json`. Zoom memakai bounds pulau dan titik lokasi, dengan label 44px yang terpisah dari skala kamera. Label digeser untuk menghindari tumpang tindih dan dihubungkan ke titik geografis dengan garis. Titik ini mewakili lokasi katalog, **bukan semua kota/kabupaten atau poligon batas administratif**. Data Sheets tanpa koordinat tetap dapat dipilih melalui daftar/dropdown; titik tidak dibuat dengan posisi rekaan.
+
 ## Sudah berfungsi
 
 - Delapan wilayah SVG terpisah; hover, label, active state, reveal bertahap, reduced motion.
-- 24 kota, 28 destinasi, 8 contoh paket; pemilihan pulau → kota → katalog; kategori dan filter paket.
+- 24 lokasi, 28 destinasi, 8 contoh paket; pulau → zoom → titik kota/kabupaten/kawasan → katalog; kategori dan filter paket.
 - Detail destinasi dan paket, daftar open trip, custom inquiry dengan preview pesan.
 - Navigasi desktop/mobile; profil, visi/misi, nilai layanan, legalitas, testimoni, kontak/footer.
 - Repository mock dan adapter publikasi CSV Google Sheets; validasi ID, relasi, tipe, URL gambar; loading/error/empty/retry.
