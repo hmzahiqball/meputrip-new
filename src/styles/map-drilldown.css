@@ -1,0 +1,300 @@
+/* The SVG viewBox follows CSS pixels, keeping city targets at least 44px on every screen. */
+.map-canvas {
+  width: 100%;
+  height: clamp(210px, 38vw, 450px);
+  overflow: hidden;
+  position: relative;
+}
+.is-focused .map-canvas {
+  height: clamp(360px, 42vw, 500px);
+}
+.map-canvas > .drilldown-map {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  overflow: hidden;
+}
+.map-camera {
+  transform-origin: 0 0;
+  transition: transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.map-stage {
+  scroll-margin-top: 22px;
+}
+.map-stage.has-explored .island-group,
+.map-stage.has-explored .map-label,
+.map-stage.has-explored .map-topline,
+.map-stage.has-explored .map-bottomline {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+.has-explored .map-scan {
+  display: none;
+}
+.map-stage.is-focused .island-group:not(.selected) {
+  opacity: 0.07;
+}
+.map-stage.is-focused .island {
+  pointer-events: none;
+  cursor: default;
+  filter: none;
+  vector-effect: non-scaling-stroke;
+}
+.is-focused .map-label,
+.is-focused .ocean-label {
+  display: none;
+}
+.map-drilldown-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 23px 0 12px;
+}
+.map-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #ffffff35;
+  border-radius: 3px;
+  min-height: 44px;
+  padding: 10px 15px;
+  font-size: 11px;
+  color: #e1e6d8;
+  white-space: nowrap;
+}
+.map-back:hover {
+  border-color: #fff;
+}
+.map-drilldown-toolbar h2 {
+  font-size: 26px;
+  letter-spacing: -0.8px;
+}
+.map-drilldown-toolbar p {
+  font-size: 11px;
+  color: #a8b29a;
+  margin-top: 6px;
+}
+.map-city-total {
+  margin-left: auto;
+  color: #a8b29a;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.city-marker {
+  animation: city-pin-enter 420ms ease var(--marker-delay) both;
+}
+.city-marker:focus-within {
+  animation: none;
+  opacity: 1;
+}
+.city-leader {
+  stroke: #cdd8bd;
+  stroke-width: 1;
+  stroke-opacity: 0.65;
+  pointer-events: none;
+}
+.city-anchor {
+  fill: white;
+  stroke: #222b1d;
+  stroke-width: 2;
+  pointer-events: none;
+}
+.city-callout {
+  cursor: pointer;
+  outline: none;
+}
+.city-callout rect {
+  fill: #172015;
+  stroke: #697548;
+  stroke-width: 1;
+  transition:
+    fill 0.2s,
+    stroke 0.2s;
+}
+.city-callout:hover rect,
+.city-callout:focus-visible rect {
+  fill: #34402a;
+  stroke: white;
+  stroke-width: 2;
+}
+.city-callout:focus-visible {
+  outline: none;
+}
+.city-name {
+  fill: white;
+  font:
+    600 12px "Segoe UI",
+    Arial,
+    sans-serif;
+  pointer-events: none;
+}
+.city-count {
+  fill: #bdc9ad;
+  font:
+    9px "Segoe UI",
+    Arial,
+    sans-serif;
+  pointer-events: none;
+}
+.city-marker.active .city-callout rect {
+  fill: #f50f0b;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.city-marker.active .city-count {
+  fill: #fff;
+}
+.city-marker.active .city-anchor {
+  fill: #f50f0b;
+  stroke: #fff;
+}
+.map-city-directory {
+  border-top: 1px solid #ffffff20;
+  padding: 18px 0 16px;
+}
+.map-city-directory > .eyebrow {
+  color: #abb69b;
+  font-size: 9px;
+  margin-bottom: 13px;
+}
+.map-city-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 8px;
+}
+.map-city-list button {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  border: 1px solid #ffffff25;
+  border-radius: 3px;
+  padding: 9px 12px;
+  color: #e1e7d9;
+  font-size: 12px;
+}
+.map-city-list button:hover {
+  background: #ffffff0a;
+  border-color: #8b9b74;
+}
+.map-city-list button.active {
+  background: #f50f0b;
+  border-color: #f50f0b;
+  color: white;
+}
+.map-city-list small {
+  display: block;
+  font-size: 9px;
+  color: #a3af93;
+  margin-top: 2px;
+}
+.map-city-list .active small {
+  color: #ffdfde;
+}
+.city-list-count {
+  margin-left: auto;
+  border-left: 1px solid #ffffff20;
+  padding-left: 12px;
+  font-size: 12px;
+}
+.map-location-note {
+  color: #b6c0a8;
+  font-size: 12px;
+  margin: 12px 0;
+}
+.map-attribution {
+  color: #89947c;
+  font-size: 8px;
+  text-align: right;
+  padding-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+.map-attribution a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.catalog-map-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: #eef0e6;
+  padding: 32px;
+  margin-bottom: 25px;
+}
+.catalog-map-prompt h3 {
+  font-size: 24px;
+}
+.catalog-map-prompt p {
+  font-size: 13px;
+  color: #697548;
+}
+@keyframes city-pin-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 760px) {
+  .map-drilldown-toolbar {
+    gap: 13px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  .map-drilldown-toolbar > div {
+    width: 100%;
+    order: 2;
+  }
+  .map-drilldown-toolbar h2 {
+    font-size: 24px;
+  }
+  .map-drilldown-toolbar p {
+    font-size: 12px;
+    max-width: 300px;
+  }
+  .map-city-total {
+    font-size: 10px;
+  }
+  .map-back {
+    font-size: 11px;
+  }
+  .map-city-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .map-city-list button {
+    font-size: 11px;
+    padding: 9px;
+    gap: 7px;
+  }
+  .map-attribution {
+    font-size: 8px;
+    text-align: left;
+    line-height: 1.8;
+  }
+  .is-focused .map-canvas {
+    height: 390px;
+  }
+  .catalog-map-prompt {
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-camera,
+  .city-marker {
+    transition: none !important;
+    animation: none !important;
+  }
+  .city-marker {
+    opacity: 1;
+    transform: none;
+  }
+}

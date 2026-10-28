@@ -1,5 +1,5 @@
 import Reveal from "../components/Reveal";
-import { useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -23,6 +23,15 @@ export default function Explorer({
     [category, setCategory] = useState("Semua"),
     [showAll, setShowAll] = useState(false);
   const region = data.regions.find((r) => r.id === regionId);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const catalogRef = useRef<HTMLElement>(null);
+  const catalogHeadingRef = useRef<HTMLHeadingElement>(null);
+  const destinationCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const destination of data.destinations)
+      counts[destination.cityId] = (counts[destination.cityId] ?? 0) + 1;
+    return counts;
+  }, [data.destinations]);
   const city = data.cities.find((c) => c.id === cityId);
   const availableCities = data.cities.filter((c) => c.regionId === regionId);
   const scope = data.destinations.filter(
@@ -39,15 +48,40 @@ export default function Explorer({
     visible.filter((d) => d.name === name),
   );
   const displayed =
-    region || showAll || category !== "Semua"
-      ? visible
-      : initialPicks.length > 0
-        ? initialPicks
-        : visible.slice(0, 3);
+    region && !city
+      ? []
+      : region || showAll || category !== "Semua"
+        ? visible
+        : initialPicks.length > 0
+          ? initialPicks
+          : visible.slice(0, 3);
   function selectRegion(id: string) {
     setRegionId(id);
     setCityId("");
     setCategory("Semua");
+    setShowAll(false);
+  }
+  function selectCity(id: string) {
+    setCityId(id);
+    setCategory("Semua");
+    if (!id) return;
+    requestAnimationFrame(() => {
+      catalogHeadingRef.current?.focus({ preventScroll: true });
+      catalogRef.current?.scrollIntoView({
+        block: "start",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
+    });
+  }
+  function returnToMap() {
+    mapRef.current?.scrollIntoView({
+      block: "start",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
   }
   return (
     <>
@@ -65,16 +99,23 @@ export default function Explorer({
           </div>
           <div className="hero-intro">
             <p>Dari barat hingga timur, ada Indonesia yang belum kamu temui.</p>
-            <a href="#pilih-wilayah">
+            <a href="#peta-eksplorasi">
               Pilih pulau, temukan perjalananmu <ArrowRight size={17} />
             </a>
           </div>
         </div>
-        <IndonesiaMap
-          regions={data.regions}
-          selected={regionId}
-          onSelect={selectRegion}
-        />
+        <div ref={mapRef} id="peta-eksplorasi">
+          <IndonesiaMap
+            regions={data.regions}
+            cities={data.cities}
+            selected={regionId}
+            selectedCity={cityId}
+            destinationCounts={destinationCounts}
+            onSelect={selectRegion}
+            onSelectCity={selectCity}
+            onBack={() => selectRegion("")}
+          />
+        </div>
         <Reveal className="region-selection" id="pilih-wilayah">
           <span className="eyebrow step-label">01 / PILIH PULAU</span>
           <div
@@ -114,21 +155,20 @@ export default function Explorer({
           <div className="city-control">
             <label htmlFor="city">
               <MapPin size={14} />{" "}
-              {region ? `Pilih kota di ${region.name}` : "Tujuan berikutnya?"}
+              {region
+                ? `Pilih kota / kabupaten di ${region.name}`
+                : "Tujuan berikutnya?"}
             </label>
             <div className="select-row">
               <select
                 id="city"
                 value={cityId}
                 disabled={!region}
-                onChange={(e) => {
-                  setCityId(e.target.value);
-                  setCategory("Semua");
-                }}
+                onChange={(e) => selectCity(e.target.value)}
               >
                 <option value="">
                   {region
-                    ? "Semua kota di wilayah ini"
+                    ? "Pilih kota / kabupaten"
                     : "Pilih pulau terlebih dahulu"}
                 </option>
                 {availableCities.map((c) => (
@@ -148,88 +188,104 @@ export default function Explorer({
           </div>
         </Reveal>
       </section>
-      <section className="section destinations" id="destinasi">
+      <section ref={catalogRef} className="section destinations" id="destinasi">
         <Reveal className="section-heading">
           <div>
             <p className="eyebrow olive">THE PLACES THAT STAY WITH YOU</p>
-            <h2>
+            <h2 ref={catalogHeadingRef} tabIndex={-1}>
               {city
                 ? `Sampai jumpa di ${city.name}.`
                 : region
-                  ? `Cerita dari ${region.name}.`
+                  ? `Pilih lokasimu di ${region.name}.`
                   : "Tempat baru. Rasa yang berbeda."}
             </h2>
           </div>
-          <a className="text-link" href="#pilih-wilayah">
+          <button className="text-link" onClick={returnToMap}>
             <ArrowLeft size={15} />{" "}
-            {region ? "Ganti pulau" : "Jelajahi lewat peta"}
-          </a>
-        </Reveal>
-        <Reveal className="catalog-toolbar">
-          <div className="filters" aria-label="Filter kategori">
-            <SlidersHorizontal size={16} />
-            {categories.map((c) => (
-              <button
-                className={c === category ? "active" : ""}
-                key={c}
-                aria-pressed={c === category}
-                onClick={() => setCategory(c)}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-          <span className="result-count" aria-live="polite">
-            {visible.length} destinasi{" "}
-            {city
-              ? `di ${city.name}`
-              : region
-                ? `di ${region.name}`
-                : "untuk dijelajahi"}
-          </span>
-        </Reveal>
-        {!region && (
-          <p className="catalog-note">
-            Pilihan inspirasi dari seluruh Indonesia. Pilih pulau dan kota di
-            peta untuk hasil yang lebih spesifik.
-          </p>
-        )}
-        <div className="destination-grid">
-          {displayed.map((d) => (
-            <DestinationCard
-              key={d.id}
-              destination={d}
-              city={data.cities.find((c) => c.id === d.cityId)}
-              onDetail={() => onDetail(d)}
-            />
-          ))}
-        </div>
-        {!region && !showAll && category === "Semua" && (
-          <button
-            className="btn outline-dark catalog-more"
-            onClick={() => setShowAll(true)}
-          >
-            Lihat semua {visible.length} destinasi <ArrowRight size={16} />
+            {region ? "Ganti kota / kabupaten" : "Jelajahi lewat peta"}
           </button>
-        )}
-        {visible.length === 0 && (
-          <div className="empty-state">
-            <Compass size={36} />
-            <h3>Perjalanan baru sedang disiapkan.</h3>
+        </Reveal>
+        {region && !city ? (
+          <div className="catalog-map-prompt">
+            <MapPin size={28} />
+            <h3>Pulau sudah dipilih. Selanjutnya, pilih lokasinya.</h3>
             <p>
-              Belum ada destinasi untuk pilihan ini. Coba kota atau pulau
-              lainnya.
+              Klik titik kota atau kabupaten pada peta {region.name} yang
+              diperbesar untuk membuka katalog pariwisata.
             </p>
-            <button
-              className="btn outline-dark"
-              onClick={() => {
-                setCityId("");
-                setCategory("Semua");
-              }}
-            >
-              Lihat semua kota
+            <button className="btn olive-btn" onClick={returnToMap}>
+              Pilih lokasi pada peta <ArrowUpRight size={16} />
             </button>
           </div>
+        ) : (
+          <>
+            <Reveal className="catalog-toolbar">
+              <div className="filters" aria-label="Filter kategori">
+                <SlidersHorizontal size={16} />
+                {categories.map((c) => (
+                  <button
+                    className={c === category ? "active" : ""}
+                    key={c}
+                    aria-pressed={c === category}
+                    onClick={() => setCategory(c)}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+              <span className="result-count" aria-live="polite">
+                {visible.length} destinasi{" "}
+                {city
+                  ? `di ${city.name}`
+                  : region
+                    ? `di ${region.name}`
+                    : "untuk dijelajahi"}
+              </span>
+            </Reveal>
+            {!region && (
+              <p className="catalog-note">
+                Pilihan inspirasi dari seluruh Indonesia. Pilih pulau dan kota
+                di peta untuk hasil yang lebih spesifik.
+              </p>
+            )}
+            <div className="destination-grid">
+              {displayed.map((d) => (
+                <DestinationCard
+                  key={d.id}
+                  destination={d}
+                  city={data.cities.find((c) => c.id === d.cityId)}
+                  onDetail={() => onDetail(d)}
+                />
+              ))}
+            </div>
+            {!region && !showAll && category === "Semua" && (
+              <button
+                className="btn outline-dark catalog-more"
+                onClick={() => setShowAll(true)}
+              >
+                Lihat semua {visible.length} destinasi <ArrowRight size={16} />
+              </button>
+            )}
+            {visible.length === 0 && (
+              <div className="empty-state">
+                <Compass size={36} />
+                <h3>Perjalanan baru sedang disiapkan.</h3>
+                <p>
+                  Belum ada destinasi untuk pilihan ini. Coba kota atau pulau
+                  lainnya.
+                </p>
+                <button
+                  className="btn outline-dark"
+                  onClick={() => {
+                    selectCity("");
+                    returnToMap();
+                  }}
+                >
+                  Lihat semua kota
+                </button>
+              </div>
+            )}
+          </>
         )}
         <p className="section-footnote">
           Katalog prototype · Deskripsi adalah inspirasi perjalanan · Foto

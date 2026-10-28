@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.css";
 import "./styles/motion.css";
 import "./styles/map-motion.css";
+import "./styles/map-drilldown.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
