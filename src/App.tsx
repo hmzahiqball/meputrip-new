@@ -1,3 +1,4 @@
+import { assetUrl } from "./utils/assetUrl";
 import { useState } from "react";
 import { ArrowUpRight, RefreshCw, Compass, Clock } from "lucide-react";
 import Header from "./components/Header";
@@ -56,7 +57,7 @@ export default function App() {
         <Modal title={destination.name} onClose={() => setDestination(null)}>
           <img
             className="modal-photo"
-            src={destination.image}
+            src={assetUrl(destination.image)}
             alt={destination.imageAlt}
           />
           <p className="eyebrow olive">
@@ -100,7 +101,7 @@ export default function App() {
         <Modal title={trip.name} onClose={() => setTrip(null)}>
           <img
             className="modal-photo"
-            src={trip.image}
+            src={assetUrl(trip.image)}
             alt={`Foto ilustrasi ${trip.name}`}
           />
           <p className="eyebrow olive">

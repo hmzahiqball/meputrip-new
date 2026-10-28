@@ -1,3 +1,4 @@
+import { assetUrl } from "../utils/assetUrl";
 import Reveal from "./Reveal";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import type { Destination, City } from "../types/travel";
@@ -18,7 +19,7 @@ export default function DestinationCard({
         aria-label={`Lihat detail ${destination.name}`}
       >
         <img
-          src={destination.image}
+          src={assetUrl(destination.image)}
           alt={destination.imageAlt}
           loading="lazy"
         />

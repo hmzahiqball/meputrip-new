@@ -1,3 +1,4 @@
+import { assetUrl } from "../utils/assetUrl";
 import Reveal from "../components/Reveal";
 import { useState } from "react";
 import {
@@ -98,7 +99,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
               >
                 <img
                   loading="lazy"
-                  src={p.image}
+                  src={assetUrl(p.image)}
                   alt={`Foto ilustrasi untuk paket ${p.name}`}
                 />
                 <span className="image-tag">
@@ -156,7 +157,11 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
             .filter((p) => p.type === "open")
             .map((p) => (
               <Reveal as="article" key={p.id}>
-                <img src={p.image} alt={`Ilustrasi ${p.name}`} loading="lazy" />
+                <img
+                  src={assetUrl(p.image)}
+                  alt={`Ilustrasi ${p.name}`}
+                  loading="lazy"
+                />
                 <div className="open-name">
                   <span className="eyebrow olive">OPEN TRIP / CONTOH</span>
                   <h3>{p.name}</h3>
@@ -184,7 +189,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
       <section className="custom-trip" id="custom-trip">
         <img
           className="custom-photo"
-          src={photos.bajo}
+          src={assetUrl(photos.bajo)}
           alt="Ilustrasi bentang kepulauan Indonesia"
           loading="lazy"
         />
@@ -215,7 +220,7 @@ export default function CompanySections({ data, onTrip, onInquiry }: Props) {
       <section className="section about" id="tentang">
         <Reveal className="about-image">
           <img
-            src={photos.bali}
+            src={assetUrl(photos.bali)}
             alt="Foto ilustrasi suasana alam Bali"
             loading="lazy"
           />
