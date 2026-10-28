@@ -48,3 +48,14 @@ Adapter menolak konfigurasi kosong, respons non-2xx, halaman HTML/login, CSV mal
 Tidak ada fallback otomatis ke mock dalam mode Sheets. Untuk kembali ke demo secara sadar, ubah `VITE_DATA_SOURCE=mock` dan restart/build ulang. Jangan mengisi data privat pada spreadsheet yang dipublikasikan.
 
 Referensi resmi: [Google — memublikasikan file](https://support.google.com/docs/answer/183965), [Sheets API authorization](https://developers.google.com/workspace/sheets/api/guides/authorizing).
+
+## Kolom lokasi untuk peta pulau yang diperbesar
+
+Tab `cities` mendukung tiga kolom tambahan opsional: `latitude`, `longitude`, `kind`.
+
+- Latitude dan longitude berupa angka desimal WGS84. Isi keduanya atau kosongkan keduanya; angka nol valid. Rentang latitude −90 sampai 90, longitude −180 sampai 180. Jangan gunakan koma sebagai pemisah desimal.
+- `kind`: `kota`, `kabupaten`, atau `kawasan`; boleh kosong untuk label umum Lokasi. Nama seperti Ubud/Lombok tetap kawasan, bukan klaim status administratif.
+- Template `docs/sheets/cities.csv` sudah memiliki ketiga kolom tersebut. Contoh: Yogyakarta, latitude −7.80139, longitude 110.36472, kind kota.
+- Spreadsheet lama dengan hanya id, regionId, name tetap dapat dimuat. Lokasi tanpa koordinat tidak dibuatkan titik palsu; pilihan tetap tersedia melalui daftar dan dropdown di wilayah yang diperbesar.
+- Untuk menambahkan kota/kabupaten, tambahkan baris cities dengan relasi regionId yang benar serta destinasi dengan cityId tersebut. Kamera memperhitungkan titik kota saat menghitung zoom. Periksa titik secara visual setelah memperbarui data.
+- Alur katalog: pilih pulau → peta wilayah diperbesar → pilih titik kota/kabupaten atau daftar pendamping → katalog kota/kabupaten. Memilih pulau saja tidak membuka semua destinasi wilayah sekaligus.

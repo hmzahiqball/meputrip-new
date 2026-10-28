@@ -1,4 +1,5 @@
 import type { TravelData, Region, City, Destination } from "../types/travel";
+import cityLocations from "./cityLocations.json";
 export const regions: Region[] = [
   {
     id: "sumatra",
@@ -76,11 +77,18 @@ const cityGroups: Record<string, string[]> = {
 };
 export const cities: City[] = Object.entries(cityGroups).flatMap(
   ([regionId, names]) =>
-    names.map((name) => ({
-      id: name.toLowerCase().replaceAll(" ", "-"),
-      name,
-      regionId,
-    })),
+    names.map((name) => {
+      const id = name.toLowerCase().replaceAll(" ", "-");
+      const location = cityLocations[id as keyof typeof cityLocations];
+      return {
+        id,
+        name,
+        regionId,
+        latitude: location.latitude,
+        longitude: location.longitude,
+        kind: location.kind as City["kind"],
+      };
+    }),
 );
 export const photos = {
   bali: "/images/bali.jpg",

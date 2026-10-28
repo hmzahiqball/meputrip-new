@@ -1,12 +1,18 @@
 import fs from "node:fs/promises";
 import ts from "typescript";
 const source = await fs.readFile("src/data/mock.ts", "utf8");
-const js = ts.transpileModule(source, {
+const compiled = ts.transpileModule(source, {
   compilerOptions: {
     target: ts.ScriptTarget.ES2022,
     module: ts.ModuleKind.ESNext,
   },
 }).outputText;
+// Embed the owned JSON module so the generated data URL needs no runtime TS loader.
+const locations = await fs.readFile("src/data/cityLocations.json", "utf8");
+const js = compiled.replace(
+  'import cityLocations from "./cityLocations.json";',
+  `const cityLocations = ${locations};`,
+);
 const { mockData } = await import(
   "data:text/javascript;base64," + Buffer.from(js).toString("base64")
 );

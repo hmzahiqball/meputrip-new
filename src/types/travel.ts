@@ -8,6 +8,9 @@ export interface City {
   id: string;
   regionId: string;
   name: string;
+  latitude?: number;
+  longitude?: number;
+  kind?: "kota" | "kabupaten" | "kawasan";
 }
 export interface Destination {
   id: string;

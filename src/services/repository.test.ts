@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { parseCsv } from "./csv";
-import { mockRepository, sheetsRepository, validateData } from "./repository";
+import {
+  mockRepository,
+  sheetsRepository,
+  validateData,
+  cityFromRow,
+} from "./repository";
 import { mockData } from "../data/mock";
 import paths from "../data/mapPaths.json";
 describe("Google Sheets CSV contract", () => {
@@ -134,4 +139,50 @@ describe("Sheets fetch adapter", () => {
 describe("Empty CSV schema validation", () => {
   it("rejects missing required headers even when there are no rows", () =>
     expect(() => parseCsv("id\n", ["id", "name"])).toThrow("Kolom name"));
+});
+
+describe("Optional city coordinates", () => {
+  it("keeps legacy three-column cities usable", () =>
+    expect(cityFromRow({ id: "new", name: "Baru", regionId: "jawa" })).toEqual({
+      id: "new",
+      name: "Baru",
+      regionId: "jawa",
+    }));
+  it("parses coordinates and administrative kind from Sheets", () =>
+    expect(
+      cityFromRow({
+        id: "x",
+        name: "X",
+        regionId: "jawa",
+        latitude: "-7.8",
+        longitude: "110.3",
+        kind: "kabupaten",
+      }),
+    ).toEqual({
+      id: "x",
+      name: "X",
+      regionId: "jawa",
+      latitude: -7.8,
+      longitude: 110.3,
+      kind: "kabupaten",
+    }));
+  it("rejects a lone coordinate", () => {
+    const data = structuredClone(mockData);
+    delete data.cities[0].longitude;
+    expect(() => validateData(data)).toThrow("Koordinat");
+  });
+  it("rejects non-finite coordinates", () => {
+    const data = structuredClone(mockData);
+    data.cities[0].latitude = NaN;
+    expect(() => validateData(data)).toThrow("Koordinat");
+  });
+  it("rejects coordinates outside geographic ranges", () => {
+    const data = structuredClone(mockData);
+    data.cities[0].latitude = 91;
+    expect(() => validateData(data)).toThrow("Koordinat");
+  });
+  it("rejects an unknown location kind", () =>
+    expect(() =>
+      cityFromRow({ id: "x", name: "X", regionId: "jawa", kind: "unknown" }),
+    ).toThrow("Jenis lokasi"));
 });

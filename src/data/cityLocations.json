@@ -1,0 +1,146 @@
+{
+  "medan": {
+    "latitude": 3.58333,
+    "longitude": 98.66667,
+    "kind": "kota",
+    "geonameId": "1214520"
+  },
+  "padang": {
+    "latitude": -0.94924,
+    "longitude": 100.35427,
+    "kind": "kota",
+    "geonameId": "1633419"
+  },
+  "bukittinggi": {
+    "latitude": -0.30907,
+    "longitude": 100.37055,
+    "kind": "kota",
+    "geonameId": "1647866"
+  },
+  "palembang": {
+    "latitude": -2.91673,
+    "longitude": 104.7458,
+    "kind": "kota",
+    "geonameId": "1633070"
+  },
+  "bandar-lampung": {
+    "latitude": -5.42917,
+    "longitude": 105.26111,
+    "kind": "kota",
+    "geonameId": "1624917"
+  },
+  "bandung": {
+    "latitude": -6.92222,
+    "longitude": 107.60694,
+    "kind": "kota",
+    "geonameId": "1650357"
+  },
+  "jakarta": {
+    "latitude": -6.21462,
+    "longitude": 106.84513,
+    "kind": "kawasan",
+    "geonameId": "1642911"
+  },
+  "yogyakarta": {
+    "latitude": -7.80139,
+    "longitude": 110.36472,
+    "kind": "kota",
+    "geonameId": "1621177"
+  },
+  "semarang": {
+    "latitude": -6.99306,
+    "longitude": 110.42083,
+    "kind": "kota",
+    "geonameId": "1627896"
+  },
+  "surabaya": {
+    "latitude": -7.24917,
+    "longitude": 112.75083,
+    "kind": "kota",
+    "geonameId": "1625822"
+  },
+  "banyuwangi": {
+    "latitude": -8.36667,
+    "longitude": 114.16667,
+    "kind": "kabupaten",
+    "geonameId": "1650076"
+  },
+  "pangkalan-bun": {
+    "latitude": -2.6832,
+    "longitude": 111.6259,
+    "kind": "kawasan",
+    "geonameId": "1632694"
+  },
+  "balikpapan": {
+    "latitude": -1.26753,
+    "longitude": 116.82887,
+    "kind": "kota",
+    "geonameId": "1650527"
+  },
+  "makassar": {
+    "latitude": -5.14861,
+    "longitude": 119.43194,
+    "kind": "kota",
+    "geonameId": "1622786"
+  },
+  "manado": {
+    "latitude": 1.48218,
+    "longitude": 124.84892,
+    "kind": "kota",
+    "geonameId": "1636544"
+  },
+  "toraja": {
+    "latitude": -3.05671,
+    "longitude": 119.7617,
+    "kind": "kawasan",
+    "geonameId": "1625123"
+  },
+  "ubud": {
+    "latitude": -8.5098,
+    "longitude": 115.2654,
+    "kind": "kawasan",
+    "geonameId": "1622846"
+  },
+  "denpasar": {
+    "latitude": -8.65,
+    "longitude": 115.21667,
+    "kind": "kota",
+    "geonameId": "1645528"
+  },
+  "labuan-bajo": {
+    "latitude": -8.4964,
+    "longitude": 119.8877,
+    "kind": "kawasan",
+    "geonameId": "1638868"
+  },
+  "lombok": {
+    "latitude": -8.67697,
+    "longitude": 116.33286,
+    "kind": "kawasan",
+    "geonameId": "7869837"
+  },
+  "ambon": {
+    "latitude": -3.69583,
+    "longitude": 128.18333,
+    "kind": "kota",
+    "geonameId": "1651531"
+  },
+  "banda-neira": {
+    "latitude": -4.5262,
+    "longitude": 129.90346,
+    "kind": "kawasan",
+    "geonameId": "1650390"
+  },
+  "raja-ampat": {
+    "latitude": -1.86521,
+    "longitude": 130.06648,
+    "kind": "kabupaten",
+    "geonameId": "1630210"
+  },
+  "jayapura": {
+    "latitude": -2.53371,
+    "longitude": 140.71813,
+    "kind": "kota",
+    "geonameId": "2082600"
+  }
+}

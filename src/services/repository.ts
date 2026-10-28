@@ -1,4 +1,4 @@
-import type { TravelData, TravelRepository } from "../types/travel";
+import type { City, TravelData, TravelRepository } from "../types/travel";
 import { mockData } from "../data/mock";
 import { config } from "../config/site";
 import { parseCsv } from "./csv";
@@ -52,6 +52,23 @@ export function validateData(data: TravelData): TravelData {
   const cityMap = new Map(data.cities.map((c) => [c.id, c]));
   if (data.cities.some((c) => !data.regions.some((r) => r.id === c.regionId)))
     throw Error("Relasi kota ke wilayah tidak valid.");
+  for (const city of data.cities) {
+    const hasLatitude = city.latitude !== undefined;
+    const hasLongitude = city.longitude !== undefined;
+    if (
+      hasLatitude !== hasLongitude ||
+      (hasLatitude &&
+        (!Number.isFinite(city.latitude) ||
+          !Number.isFinite(city.longitude) ||
+          Math.abs(city.latitude!) > 90 ||
+          Math.abs(city.longitude!) > 180))
+    )
+      throw Error(
+        `Koordinat ${city.name} tidak valid. Isi latitude dan longitude berpasangan.`,
+      );
+    if (city.kind && !["kota", "kabupaten", "kawasan"].includes(city.kind))
+      throw Error(`Jenis lokasi ${city.name} tidak valid.`);
+  }
   for (const item of [...data.destinations, ...data.packages]) {
     if (cityMap.get(item.cityId)?.regionId !== item.regionId)
       throw Error("Relasi destinasi/paket ke kota dan wilayah tidak valid.");
@@ -59,6 +76,17 @@ export function validateData(data: TravelData): TravelData {
       throw Error("URL foto harus HTTPS atau /images/.");
   }
   return data;
+}
+export function cityFromRow(row: Row): City {
+  const city: City = { id: row.id, name: row.name, regionId: row.regionId };
+  if (row.latitude?.trim()) city.latitude = Number(row.latitude);
+  if (row.longitude?.trim()) city.longitude = Number(row.longitude);
+  if (row.kind?.trim()) {
+    if (!["kota", "kabupaten", "kawasan"].includes(row.kind))
+      throw Error(`Jenis lokasi ${row.name} tidak valid.`);
+    city.kind = row.kind as City["kind"];
+  }
+  return city;
 }
 async function getRows(key: string, signal?: AbortSignal): Promise<Row[]> {
   const gid = config.gids[key];
@@ -104,11 +132,7 @@ export const sheetsRepository: TravelRepository = {
         tagline: r.tagline,
         description: r.description,
       })),
-      cities: tables.cities.map((r) => ({
-        id: r.id,
-        name: r.name,
-        regionId: r.regionId,
-      })),
+      cities: tables.cities.map(cityFromRow),
       destinations: tables.destinations.map((r) => ({
         id: r.id,
         cityId: r.cityId,

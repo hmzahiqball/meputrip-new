@@ -22,3 +22,11 @@ Foto dari Unsplash disimpan lokal. Gambar tidak dimaksudkan untuk membuktikan do
 | temple.jpg         | https://images.unsplash.com/photo-1555400038-63f5ba517a47    |
 
 URL foto lengkap dan ukuran unduhan tersedia di scripts/download-images.mjs. Nama file adalah peran ilustrasi, bukan verifikasi lokasi foto. Ikon: Lucide React (ISC). Font memakai system sans-serif dan Georgia, tanpa request font eksternal.
+
+## Koordinat kota, kabupaten, dan kawasan
+
+Data pada `src/data/cityLocations.json` diadaptasi dari ekstrak Indonesia GeoNames, diunduh 28 Oktober 2026 dari https://download.geonames.org/export/dump/ID.zip. Kolom `geonameId` mempertahankan ID sumber untuk audit. Tautan tiap catatan: `https://www.geonames.org/{geonameId}`.
+
+Sumber/penjelasan: https://www.geonames.org/export/ dan https://download.geonames.org/export/dump/readme.txt. Lisensi **Creative Commons Attribution 4.0** (https://creativecommons.org/licenses/by/4.0/). Kredit juga tampil di bawah peta aplikasi.
+
+Perubahan: memilih 24 lokasi katalog, memetakan ke ID internal, menambahkan jenis tampilan (`kota`, `kabupaten`, `kawasan`), lalu memproyeksikan koordinat dengan proyeksi yang sama dengan siluet Natural Earth. Titik merupakan lokasi representatif/centroid, bukan batas administratif dan bukan koordinat setiap objek wisata. Lombok, Toraja, Ubud, dan beberapa tempat lain tetap diberi label kawasan; tidak semuanya merupakan kota otonom atau kabupaten. Data tidak mencakup seluruh kota/kabupaten Indonesia.
