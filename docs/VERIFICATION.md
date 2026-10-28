@@ -73,3 +73,12 @@ Saat pengembangan, browser development sempat kehilangan koneksi setelah restart
 - Console error kosong pada pemeriksaan alur. Screenshot desktop Jawa dan mobile Bali disimpan di outputs chat.
 - Reduced motion diperiksa melalui source CSS dan cabang scroll, bukan perubahan preferensi OS. Pengujian mobile memakai viewport browser, bukan perangkat fisik.
 - Titik hanya mencakup 24 lokasi katalog, bukan seluruh batas administratif kota/kabupaten. Google Sheets live tetap belum dikonfigurasi.
+
+## Kesiapan GitHub Pages — 28 Oktober 2026
+
+- Base Vite `/meputrip-new/`; seluruh tujuh penggunaan gambar React memakai resolver aset lokal, termasuk dialog, paket, dan profil. Data mock/CSV tidak diubah.
+- `npm test`: 36 pengujian lulus; mencakup path subdirektori, root hosting, URL HTTPS, dan path yang sudah memiliki base.
+- `npm run build`: TypeScript dan Vite berhasil, 1601 modul.
+- Preview production pada `/meputrip-new/`: entry aplikasi tersedia; JavaScript, CSS, dan enam foto katalog mengembalikan HTTP 200 dengan tipe konten sesuai, bukan fallback HTML.
+- Workflow Pages disiapkan dengan trigger manual, Node 22, npm ci, tests, build, artifact, dan deployment. Belum dijalankan di GitHub; keberhasilan deployment live belum diverifikasi.
+- File pengguna yang belum dilacak `public/images/logo_mepu.png` tidak dimasukkan dalam commit ini.

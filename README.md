@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Buka URL Local yang dicetak terminal (default http://127.0.0.1:5173). `npm ci` tidak diperlukan ulang jika `node_modules` sudah tersedia. Jangan membuka index.html langsung sebagai file.
+Buka URL Local yang dicetak terminal (default http://127.0.0.1:5173/meputrip-new/). `npm ci` tidak diperlukan ulang jika `node_modules` sudah tersedia. Jangan membuka index.html langsung sebagai file.
 
 ```powershell
 npm test
@@ -20,7 +20,21 @@ npm run build
 npm run preview
 ```
 
-Preview production default http://127.0.0.1:4173. `dist/` adalah hasil build statis dan dapat ditempatkan pada static hosting. Tidak ada server aplikasi, pemesanan, atau pembayaran. `package-lock.json` menyimpan versi dependency yang teruji.
+Preview production default http://127.0.0.1:4173/meputrip-new/. `dist/` adalah hasil build statis dan dapat ditempatkan pada static hosting. Tidak ada server aplikasi, pemesanan, atau pembayaran. `package-lock.json` menyimpan versi dependency yang teruji.
+
+## Deploy ke GitHub Pages
+
+Konfigurasi siap untuk https://hmzahiqball.github.io/meputrip-new/. Deployment belum dijalankan otomatis.
+
+1. Buka repository **Settings → Pages → Build and deployment → Source**, lalu pilih **GitHub Actions**.
+2. Buka **Actions → Deploy Meputrip to GitHub Pages → Run workflow**. Pilih branch **main**, lalu **Run workflow**.
+3. Tunggu job `build` dan `deploy` berhasil. Buka URL pada environment `github-pages` atau alamat di atas.
+
+Workflow `.github/workflows/deploy.yml` memasang dependency dengan `npm ci`, menjalankan tests, membangun `dist`, lalu menerbitkannya. Token deployment disediakan GitHub otomatis; tidak perlu menambahkan personal access token. Setelah perubahan berikutnya dipush, jalankan workflow kembali. Trigger sengaja manual agar pengguna menentukan waktu publikasi.
+
+`vite.config.ts` memakai base `/meputrip-new/`. `assetUrl` menambahkan base pada gambar lokal saat dirender, sehingga data mock dan Sheets tetap memakai `/images/nama.jpg`; URL HTTPS tidak diubah. Jangan menambahkan nama repository ke data CSV. Jika memakai custom domain atau repository `hmzahiqball.github.io`, ubah base menjadi `/`, lalu build dan deploy ulang. Navigasi halaman memakai anchor, sehingga tidak membutuhkan fallback SPA `404.html`.
+
+Deployment default memakai mock data. File `.env.local` tidak diunggah ke GitHub. Untuk konfigurasi Sheets/WhatsApp nantinya, tambahkan variabel publik `VITE_` yang diperlukan pada langkah build workflow sesuai `.env.example`; jangan memasukkan secret atau service account. Panduan resmi: [Vite GitHub Pages](https://vite.dev/guide/static-deploy#github-pages).
 
 ## Alur utama
 
