@@ -1909,3 +1909,97 @@ footer {
     font-size: 12px;
   }
 }
+
+/* Shared page identity retains the original Meputrip palette and typography. */
+.nav a[aria-current="page"] {
+  color: #fff;
+  box-shadow: inset 0 -2px var(--red);
+}
+#main:focus {
+  outline: none;
+}
+.page-intro {
+  background: var(--ink);
+  color: white;
+  padding: 76px 5% 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+.page-intro .eyebrow {
+  color: #c6c9bb;
+}
+.page-intro h1 {
+  font-size: clamp(42px, 5vw, 73px);
+  font-weight: 400;
+  margin-top: 22px;
+  letter-spacing: -0.045em;
+}
+.page-intro h1 em {
+  color: #c4cbb6;
+}
+.page-intro-description {
+  max-width: 320px;
+  color: #aeb4a8;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.documentation {
+  border-top: 1px solid #22272018;
+}
+.documentation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 24px;
+}
+.documentation-grid figure {
+  min-width: 0;
+}
+.documentation-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.documentation-grid figcaption {
+  padding: 18px 0;
+}
+.documentation-grid h3 {
+  margin: 8px 0;
+}
+.documentation-grid small {
+  color: var(--muted);
+  font-size: 11px;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .site-header {
+    gap: 18px;
+  }
+  .nav {
+    gap: 18px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 760px) {
+  .page-intro {
+    padding: 48px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .page-intro-description {
+    max-width: 440px;
+    font-size: 12px;
+  }
+  .documentation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+  .documentation-grid h3 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 440px) {
+  .documentation-grid {
+    grid-template-columns: 1fr;
+  }
+}

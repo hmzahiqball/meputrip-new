@@ -1,19 +1,40 @@
 import { assetUrl } from "./utils/assetUrl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, RefreshCw, Compass, Clock } from "lucide-react";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
 import Inquiry from "./components/Inquiry";
 import Explorer from "./sections/Explorer";
-import CompanySections from "./sections/CompanySections";
+import TripSections from "./sections/TripSections";
+import ProfilePage from "./sections/ProfilePage";
+import ReviewsPage from "./sections/ReviewsPage";
+import Footer from "./components/Footer";
+import { usePageRoute } from "./hooks/usePageRoute";
+import { pages } from "./utils/navigation";
 import { useTravelData } from "./hooks/useTravelData";
 import { config } from "./config/site";
 import type { Destination, TripPackage } from "./types/travel";
 export default function App() {
   const { data, error, retry } = useTravelData();
+  const { page, anchor } = usePageRoute();
   const [destination, setDestination] = useState<Destination | null>(null),
     [trip, setTrip] = useState<TripPackage | null>(null),
     [inquiry, setInquiry] = useState<string | null>(null);
+  useEffect(() => {
+    document.title = `${pages.find((item) => item.id === page)?.label} | Meputrip`;
+    setTrip(null);
+    setDestination(null);
+    setInquiry(null);
+    if (!data) return;
+    const frame = requestAnimationFrame(() => {
+      const target = anchor ? document.getElementById(anchor) : null;
+      if (target)
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      else window.scrollTo({ top: 0, behavior: "instant" });
+      document.getElementById("main")?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [page, anchor, data]);
   function inquire(initial: string) {
     setTrip(null);
     setDestination(null);
@@ -21,11 +42,11 @@ export default function App() {
   }
   return (
     <>
-      <a className="skip-link" href="#main">
+      <a className="skip-link" href={`#/${page}/main`}>
         Lewati navigasi
       </a>
-      <Header />
-      <main id="main">
+      <Header page={page} />
+      <main id="main" tabIndex={-1}>
         {!data && !error && (
           <div className="loading-state" role="status">
             <Compass className="loading-icon" size={40} />
@@ -48,11 +69,22 @@ export default function App() {
         )}
         {data && (
           <>
-            <Explorer data={data} onDetail={setDestination} />
-            <CompanySections data={data} onTrip={setTrip} onInquiry={inquire} />
+            {page === "pesan-perjalanan" && (
+              <>
+                <Explorer data={data} onDetail={setDestination} />
+                <TripSections
+                  data={data}
+                  onTrip={setTrip}
+                  onInquiry={inquire}
+                />
+              </>
+            )}
+            {page === "profil-mepu" && <ProfilePage data={data} />}
+            {page === "review-dokumentasi" && <ReviewsPage data={data} />}
           </>
         )}
       </main>
+      {data && <Footer key={page} data={data} onInquiry={inquire} />}
       {destination && data && (
         <Modal title={destination.name} onClose={() => setDestination(null)}>
           <img

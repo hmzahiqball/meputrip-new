@@ -32,9 +32,17 @@ Konfigurasi siap untuk https://hmzahiqball.github.io/meputrip-new/. Deployment b
 
 Workflow `.github/workflows/deploy.yml` memasang dependency dengan `npm ci`, menjalankan tests, membangun `dist`, lalu menerbitkannya. Token deployment disediakan GitHub otomatis; tidak perlu menambahkan personal access token. Setelah perubahan berikutnya dipush, jalankan workflow kembali. Trigger sengaja manual agar pengguna menentukan waktu publikasi.
 
-`vite.config.ts` memakai base `/meputrip-new/`. `assetUrl` menambahkan base pada gambar lokal saat dirender, sehingga data mock dan Sheets tetap memakai `/images/nama.jpg`; URL HTTPS tidak diubah. Jangan menambahkan nama repository ke data CSV. Jika memakai custom domain atau repository `hmzahiqball.github.io`, ubah base menjadi `/`, lalu build dan deploy ulang. Navigasi halaman memakai anchor, sehingga tidak membutuhkan fallback SPA `404.html`.
+`vite.config.ts` memakai base `/meputrip-new/`. `assetUrl` menambahkan base pada gambar lokal saat dirender, sehingga data mock dan Sheets tetap memakai `/images/nama.jpg`; URL HTTPS tidak diubah. Jangan menambahkan nama repository ke data CSV. Jika memakai custom domain atau repository `hmzahiqball.github.io`, ubah base menjadi `/`, lalu build dan deploy ulang. Navigasi memakai hash route (`#/pesan-perjalanan`, `#/profil-mepu`, `#/review-dokumentasi`), sehingga tautan langsung dan refresh tetap berfungsi tanpa fallback SPA `404.html`.
 
 Deployment default memakai mock data. File `.env.local` tidak diunggah ke GitHub. Untuk konfigurasi Sheets/WhatsApp nantinya, tambahkan variabel publik `VITE_` yang diperlukan pada langkah build workflow sesuai `.env.example`; jangan memasukkan secret atau service account. Panduan resmi: [Vite GitHub Pages](https://vite.dev/guide/static-deploy#github-pages).
+
+## Halaman
+
+- `#/pesan-perjalanan`: peta interaktif, destinasi, paket perjalanan, open trip, dan custom trip.
+- `#/profil-mepu`: profil, visi/misi, nilai layanan, legalitas, dan kontak melalui footer.
+- `#/review-dokumentasi`: review dan galeri ilustrasi destinasi. Ulasan dummy serta foto ilustrasi tetap diberi label sesuai sumber data.
+
+Tautan ke bagian tertentu memakai format `#/pesan-perjalanan/open-trip` atau `#/profil-mepu/legalitas`.
 
 ## Alur utama
 
@@ -78,7 +86,7 @@ Meputrip/
 
 ## Arsitektur dan perubahan konten
 
-`TravelRepository.load(signal)` mengembalikan satu kontrak `TravelData`. `mockRepository` dan `sheetsRepository` dipilih melalui konfigurasi, sedangkan komponen hanya menerima data bertipe. Tidak ada fetching langsung di card atau peta. State pulau/kota/kategori berada pada Explorer; filter paket berdiri sendiri. Anchor digunakan untuk section satu halaman sehingga React Router belum diperlukan. CSS animation menggantikan kebutuhan library animasi tambahan.
+`TravelRepository.load(signal)` mengembalikan satu kontrak `TravelData`. `mockRepository` dan `sheetsRepository` dipilih melalui konfigurasi, sedangkan komponen hanya menerima data bertipe. Tidak ada fetching langsung di card atau peta. State pulau/kota/kategori berada pada Explorer; filter paket berdiri sendiri. Tiga halaman dirender terpisah melalui hash route ringan tanpa dependency tambahan; navigasi mendukung tombol kembali/maju browser, judul halaman, fokus konten utama, dan tautan ke bagian tertentu. Footer tersedia di setiap halaman. Tautan anchor lama tetap didukung. CSS animation menggantikan kebutuhan library animasi tambahan.
 
 Edit `src/data/mock.ts` untuk konten prototype. ID wilayah tetap: `sumatra`, `jawa`, `kalimantan`, `sulawesi`, `bali`, `nusa-tenggara`, `maluku`, `papua`. Pertahankan relasi `regionId` dan `cityId`. Foto dapat diganti di `public/images/`; data mendukung HTTPS image URL atau `/images/`.
 

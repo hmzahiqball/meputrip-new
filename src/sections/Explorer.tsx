@@ -89,7 +89,7 @@ export default function Explorer({
         <div className="hero-heading">
           <div>
             <p className="eyebrow">
-              <span className="tiny-line" /> YOUR NEXT STORY STARTS HERE
+              <span className="tiny-line" /> 01 / PESAN PERJALANAN
             </p>
             <h1>
               Dekat dengan alam.
@@ -99,7 +99,7 @@ export default function Explorer({
           </div>
           <div className="hero-intro">
             <p>Dari barat hingga timur, ada Indonesia yang belum kamu temui.</p>
-            <a href="#peta-eksplorasi">
+            <a href="#/pesan-perjalanan/peta-eksplorasi">
               Pilih pulau, temukan perjalananmu <ArrowRight size={17} />
             </a>
           </div>
@@ -179,7 +179,7 @@ export default function Explorer({
               </select>
               <a
                 className="go-button"
-                href="#destinasi"
+                href="#/pesan-perjalanan/destinasi"
                 aria-label="Lihat katalog destinasi"
               >
                 <ArrowRight size={20} />
