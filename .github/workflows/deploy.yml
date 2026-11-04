@@ -2,6 +2,9 @@ name: Deploy Meputrip to GitHub Pages
 
 # Deployment is manual: enable Pages, then Actions > Run workflow on main.
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
