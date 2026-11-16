@@ -102,11 +102,8 @@ export default function ProfilePage({ data }: { data: TravelData }) {
       <Reveal as="section" className="section legal" id="legalitas">
         <div>
           <p className="eyebrow olive">COMPANY INFORMATION</p>
-          <h2>Kenali perusahaanmu.</h2>
-          <p>
-            Dokumen legal dan identitas perusahaan akan ditampilkan setelah
-            diberikan dan diverifikasi oleh pemilik.
-          </p>
+          <h2>Legalitas perusahaan</h2>
+          <p>Identitas badan usaha dan dokumen perusahaan untuk publik.</p>
         </div>
         <div>
           {data.legal.map((doc) => (
@@ -115,9 +112,12 @@ export default function ProfilePage({ data }: { data: TravelData }) {
               <div>
                 <h3>{doc.title}</h3>
                 <p>{doc.status}</p>
-                {/^https:\/\//.test(doc.url) && (
+                {(/^https:\/\//.test(doc.url) ||
+                  /^\/legalitas\/[a-z0-9][a-z0-9._-]*\.pdf$/i.test(
+                    doc.url,
+                  )) && (
                   <a
-                    href={doc.url}
+                    href={assetUrl(doc.url)}
                     target="_blank"
                     rel="noreferrer"
                     className="text-link"

@@ -2,7 +2,6 @@ import Reveal from "./Reveal";
 import {
   ArrowUpRight,
   ArrowRight,
-  Compass,
   MessageCircle,
   Mail,
   Phone,
@@ -10,6 +9,7 @@ import {
   Instagram,
 } from "lucide-react";
 import type { TravelData } from "../types/travel";
+import { assetUrl } from "../utils/assetUrl";
 export default function Footer({
   data,
   onInquiry,
@@ -38,26 +38,29 @@ export default function Footer({
       </Reveal>
       <Reveal className="footer-grid">
         <div>
-          <a href="#/pesan-perjalanan" className="brand">
-            <Compass size={27} />
-            <span>
-              mepu<span className="brand-light">trip.</span>
-            </span>
+          <a
+            href="#/pesan-perjalanan"
+            className="brand"
+            aria-label="Meputrip beranda"
+          >
+            <img
+              src={assetUrl("/images/logo_mepu.png")}
+              alt=""
+              loading="lazy"
+            />
           </a>
           <p>
             Lebih dekat dengan Indonesia.
             <br />
             Satu perjalanan pada satu waktu.
           </p>
-          <span className="prototype-label">
-            PROTOTYPE · IDENTITAS VISUAL SEMENTARA
-          </span>
         </div>
         <div>
           <h3>Jelajahi</h3>
           <a href="#/pesan-perjalanan/destinasi">
             Destinasi <ArrowUpRight size={12} />
           </a>
+          <a href="#/pesan-perjalanan/katalog-jawa">Katalog Pulau Jawa</a>
           <a href="#/pesan-perjalanan/open-trip">Open trip</a>
           <a href="#/pesan-perjalanan/custom-trip">Custom trip</a>
           <a href="#/profil-mepu">Profil Mepu</a>

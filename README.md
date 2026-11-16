@@ -38,11 +38,15 @@ Deployment default memakai mock data. File `.env.local` tidak diunggah ke GitHub
 
 ## Halaman
 
-- `#/pesan-perjalanan`: peta interaktif, destinasi, paket perjalanan, open trip, dan custom trip.
+- `#/pesan-perjalanan`: peta interaktif, destinasi, Katalog Pulau Jawa, contoh paket perjalanan, open trip, dan custom trip.
 - `#/profil-mepu`: profil, visi/misi, nilai layanan, legalitas, dan kontak melalui footer.
 - `#/review-dokumentasi`: review dan galeri ilustrasi destinasi. Ulasan dummy serta foto ilustrasi tetap diberi label sesuai sumber data.
 
 Tautan ke bagian tertentu memakai format `#/pesan-perjalanan/open-trip` atau `#/profil-mepu/legalitas`.
+
+Katalog Pulau Jawa tersedia di `#/pesan-perjalanan/katalog-jawa`. Konten web ada di `src/data/javaCatalogs.json` dan kedua PDF sumber ada di `public/katalog/`. Perbarui keduanya saat katalog direvisi. Katalog ini tersedia dalam mode data lokal dan Google Sheets.
+
+Untuk menambahkan surat legalitas, simpan versi PDF yang disetujui untuk publik di `public/legalitas/nama-dokumen.pdf`. Isi `title`, `status`, dan `url: "/legalitas/nama-dokumen.pdf"` pada entri `legal` di `src/data/mock.ts` atau kolom setara pada tab `legal` jika memakai Sheets. URL HTTPS publik juga bisa dipakai sebagai nilai `url`.
 
 ## Alur utama
 
@@ -117,7 +121,7 @@ Koordinat 24 lokasi katalog berasal dari GeoNames dan tersimpan lokal di `src/da
 
 ## Masih placeholder / batas prototype
 
-- Logo/identitas visual sementara, draft profil dan janji layanan.
+- Draft profil dan janji layanan.
 - Harga, tanggal keberangkatan, ketersediaan, fasilitas, kontak, alamat, jam operasional, dokumen legal.
 - Testimoni diberi label dummy; foto diberi label ilustrasi dan bisa berbeda dari destinasi spesifik.
 - Tidak ada pemesanan, pembayaran, admin dashboard, atau data pengguna tersimpan.

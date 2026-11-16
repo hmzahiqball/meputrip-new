@@ -1,9 +1,9 @@
-/** Keep CMS paths portable; prefix local images only at the rendering boundary. */
+/** Resolve portable public asset paths against the deployment base. */
 export function assetUrl(
   path: string,
   base = import.meta.env.BASE_URL,
 ): string {
-  return path.startsWith("/images/")
+  return /^\/(images|katalog|legalitas)\//.test(path)
     ? `${base.replace(/\/$/, "")}${path}`
     : path;
 }

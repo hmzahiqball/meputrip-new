@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Modal from "./components/Modal";
 import Inquiry from "./components/Inquiry";
 import Explorer from "./sections/Explorer";
+import JavaCatalogs from "./sections/JavaCatalogs";
 import TripSections from "./sections/TripSections";
 import ProfilePage from "./sections/ProfilePage";
 import ReviewsPage from "./sections/ReviewsPage";
@@ -72,6 +73,7 @@ export default function App() {
             {page === "pesan-perjalanan" && (
               <>
                 <Explorer data={data} onDetail={setDestination} />
+                <JavaCatalogs onInquiry={inquire} />
                 <TripSections
                   data={data}
                   onTrip={setTrip}

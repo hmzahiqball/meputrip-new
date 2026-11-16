@@ -1,7 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { assetUrl } from "./assetUrl";
 
-describe("deployment image URLs", () => {
+describe("deployment asset URLs", () => {
+  it("resolves catalog and legal PDFs under a repository subpath", () => {
+    for (const file of [
+      "/katalog/wisata-alam-pulau-jawa.pdf",
+      "/legalitas/nib.pdf",
+    ]) {
+      expect(assetUrl(file, "/meputrip-new/")).toBe(`/meputrip-new${file}`);
+      expect(assetUrl(file, "/")).toBe(file);
+    }
+  });
   it("resolves CMS and mock image paths under a repository subpath", () => {
     expect(assetUrl("/images/bali.jpg", "/meputrip-new/")).toBe(
       "/meputrip-new/images/bali.jpg",

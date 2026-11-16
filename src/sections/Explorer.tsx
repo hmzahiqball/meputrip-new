@@ -102,6 +102,9 @@ export default function Explorer({
             <a href="#/pesan-perjalanan/peta-eksplorasi">
               Pilih pulau, temukan perjalananmu <ArrowRight size={17} />
             </a>
+            <a href="#/pesan-perjalanan/katalog-jawa">
+              Lihat katalog Pulau Jawa <ArrowRight size={17} />
+            </a>
           </div>
         </div>
         <div ref={mapRef} id="peta-eksplorasi">

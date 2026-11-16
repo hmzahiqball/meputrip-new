@@ -22,18 +22,13 @@ export default function TripSections({
       <section className="section trips" id="paket">
         <Reveal className="section-heading">
           <div>
-            <p className="eyebrow olive">CURATED JOURNEYS</p>
+            <p className="eyebrow olive">CONTOH PAKET</p>
             <h2>
               Bukan sekadar pergi.
               <br />
               <em>Ini tentang mengalami.</em>
             </h2>
           </div>
-          <p className="heading-note">
-            Pilih perjalanan yang terasa seperti kamu.
-            <br />
-            Semua paket berikut adalah contoh prototype.
-          </p>
         </Reveal>
         <div className="trip-filters" aria-label="Filter paket per wilayah">
           <button

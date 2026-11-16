@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ArrowUpRight, Menu, X, Compass } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { pages, type PageId } from "../utils/navigation";
+import { assetUrl } from "../utils/assetUrl";
 export default function Header({ page }: { page: PageId }) {
   const [open, setOpen] = useState(false);
   return (
@@ -10,10 +11,7 @@ export default function Header({ page }: { page: PageId }) {
         className="brand"
         aria-label="Meputrip beranda"
       >
-        <Compass size={29} />
-        <span>
-          mepu<span className="brand-light">trip.</span>
-        </span>
+        <img src={assetUrl("/images/logo_mepu.png")} alt="" />
       </a>
       <nav
         id="primary-navigation"

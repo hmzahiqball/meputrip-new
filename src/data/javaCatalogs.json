@@ -1,0 +1,317 @@
+{
+  "nature": [
+    {
+      "name": "Bandung Raya & Ciwidey (Jawa Barat)",
+      "description": "Kawasan pegunungan berhawa sejuk dengan kaldera vulkanik purba, danau kawah, dan hamparan perkebunan teh hijau.",
+      "locations": [
+        "Kawah Putih Gunung Patuha",
+        "Ranca Upas (penangkaran rusa & bumi perkemahan)",
+        "Situ Patenggang",
+        "Tebing Keraton",
+        "Farmhouse Lembang",
+        "Gunung Tangkuban Perahu",
+        "Air Terjun Maribaya",
+        "Stone Garden Citatah",
+        "Curug Dago",
+        "Situ Ciburuy",
+        "Perkebunan Teh Rancabali"
+      ]
+    },
+    {
+      "name": "Bogor & Puncak (Jawa Barat)",
+      "description": "Kota Hujan dengan ekosistem hutan tropis pegunungan, kebun raya botani legendaris, serta puluhan air terjun tersembunyi (curug).",
+      "locations": [
+        "Kebun Raya Bogor",
+        "Gunung Pancar",
+        "Telaga Warna Puncak",
+        "Curug Cilember (air terjun tujuh tingkat)",
+        "Curug Leuwi Hejo",
+        "Curug Bidadari",
+        "Riung Gunung Tea Walk",
+        "Kawasan Wisata Gunung Salak Endah",
+        "Curug Nangka"
+      ]
+    },
+    {
+      "name": "Kecamatan Pangalengan (Kabupaten Bandung)",
+      "description": "Dataran tinggi selatan Bandung yang terkenal dengan panorama perkebunan teh luas, danau vulkanik, dan titik nol hulu sungai penting.",
+      "locations": [
+        "Situ Cileunca",
+        "Nimo Highland",
+        "Perkebunan Teh Malabar",
+        "Cileunca Sunrise Point",
+        "Situ Cisanti (Titik Nol Kilometer Sungai Citarum)",
+        "Wayang Windu Panenjoan",
+        "Kampung Singkur (arung jeram)"
+      ]
+    },
+    {
+      "name": "Cidaun & Pantai Selatan Cianjur",
+      "description": "Jalur lintasan ekstrem yang menghubungkan perbukitan hijau pegunungan langsung dengan deburan ombak besar Samudra Hindia.",
+      "locations": [
+        "Pantai Jayanti",
+        "Pelabuhan Nelayan Tradisional",
+        "Curug Ngebul Cianjur Selatan",
+        "Curug Ceret Naringgul",
+        "Pantai Apra",
+        "Kawasan Konservasi Pesisir Pantai Bojonglarang"
+      ]
+    },
+    {
+      "name": "Sumedang & Sukabumi (Jawa Barat)",
+      "description": "Wilayah lembah bendungan raksasa serta geopark dunia UNESCO yang kaya akan air terjun spektakuler dan jembatan gantung hutan.",
+      "locations": [
+        "Waduk Jatigede",
+        "Puncak Damar",
+        "Geopark Nasional Ciletuh (Taman Bumi UNESCO)",
+        "Curug Cimarinjung",
+        "Curug Awang",
+        "Situ Gunung Suspension Bridge",
+        "Curug Sawer",
+        "Pantai Palabuhanratu",
+        "Karang Hawu"
+      ]
+    },
+    {
+      "name": "Pangandaran (Jawa Barat)",
+      "description": "Surganya wisata bahari pantai selatan dengan cagar alam, ngarai hijau sungai bawah tanah, dan ombak selancar kelas dunia.",
+      "locations": [
+        "Pantai Pangandaran",
+        "Green Canyon (Cukang Taneuh)",
+        "Pantai Batu Karas",
+        "Cagar Alam Pananjung (Gua Lanang, Gua Parat)",
+        "Pantai Karapyak",
+        "Citumang (body rafting)",
+        "Pantai Madasari"
+      ]
+    },
+    {
+      "name": "Anyar & Cilegon (Banten)",
+      "description": "Garis pantai berpasir landai di ujung barat Pulau Jawa yang menghadap langsung ke Selat Sunda dan gugusan Gunung Krakatau.",
+      "locations": [
+        "Pantai Anyer",
+        "Mercusuar Raja Willem Cikoneng (Titik Nol Anyer-Panarukan)",
+        "Pantai Carita",
+        "Pantai Sambolo",
+        "Pulau Sangiang",
+        "panorama perbukitan Gunung Batu Lawang Cilegon"
+      ]
+    },
+    {
+      "name": "Karawang (Jawa Barat)",
+      "description": "Wilayah pesisir utara dan perbukitan pinus dataran tinggi yang menawarkan kombinasi wisata pantai dan air terjun tersembunyi.",
+      "locations": [
+        "Pantai Tanjung Pakis",
+        "Curug Cigentis",
+        "Danau Singkarak Karawang",
+        "Pantai Samudera Baru",
+        "Puncak Sempur (hutan pinus)",
+        "Kawasan Konservasi Mangrove Sedari"
+      ]
+    },
+    {
+      "name": "Jakarta & Kepulauan Seribu (DKI Jakarta)",
+      "description": "Konservasi flora-fauna perkotaan, ekosistem hutan bakau lindung, serta gugusan pulau tropis berpasir putih di teluk Jakarta.",
+      "locations": [
+        "Taman Margasatwa Ragunan",
+        "Ekowisata Hutan Mangrove PIK",
+        "Taman Nasional Kepulauan Seribu (Pulau Pari, Pulau Tidung, Pulau Pramuka)",
+        "Setu Babakan",
+        "Suaka Margasatwa Muara Angke"
+      ]
+    },
+    {
+      "name": "Cirebon & Indramayu (Jawa Barat)",
+      "description": "Kawasan pesisir pantai utara (pantura) dengan muara sungai, konservasi bakau, dan waduk irigasi luas.",
+      "locations": [
+        "Pantai Kejawanan Cirebon",
+        "Pantai Plentong Indramayu",
+        "Hutan Mangrove Eretan",
+        "Waduk Cipancuh",
+        "lanskap muara pesisir pantura"
+      ]
+    },
+    {
+      "name": "Kota Semarang & Sekitarnya (Jawa Tengah)",
+      "description": "Kawasan yang diapit oleh keindahan danau rawa purba vulkanik serta pegunungan sejuk Bandungan.",
+      "locations": [
+        "Danau Rawa Pening",
+        "Kawasan Bandungan (Umbul Sidomukti, Candi Gedong Songo)",
+        "Goa Kreo",
+        "Pantai Marina",
+        "Brown Canyon Semarang",
+        "Curug Benowo",
+        "Air Terjun Semirang"
+      ]
+    },
+    {
+      "name": "Yogyakarta (DI Yogyakarta)",
+      "description": "Destinasi istimewa yang memadukan bentang alam pesisir selatan, tebing karst purba, gua stalaktit bawah tanah, dan lava tour Merapi.",
+      "locations": [
+        "Pantai Parangtritis",
+        "Tebing Breksi",
+        "Goa Pindul (tubing sungai bawah tanah)",
+        "Merapi Lava Tour Kaliadem",
+        "Pantai Timang",
+        "Hutan Pinus Pengger",
+        "Air Terjun Sri Gethuk"
+      ]
+    },
+    {
+      "name": "Surabaya & Sidoarjo (Jawa Timur)",
+      "description": "Kawasan delta sungai besar, muara pesisir selat Madura, dan ekosistem konservasi bakau pesisir timur Jawa.",
+      "locations": [
+        "Jembatan Suramadu",
+        "Ekowisata Mangrove Wonorejo",
+        "Pantai Kenjeran Lama/Baru",
+        "Pulau Kenjeran",
+        "Delta Sungai Brantas",
+        "monumen alam Lumpur Sidoarjo"
+      ]
+    },
+    {
+      "name": "Malang & Batu (Jawa Timur)",
+      "description": "Lembah pegunungan tinggi yang dikelilingi udara dingin, air terjun bertingkat megah, dan pantai teluk tersembunyi di selatan Malang.",
+      "locations": [
+        "Air Terjun Coban Rondo",
+        "Taman Rekreasi Selecta",
+        "Coban Pelangi",
+        "Air Terjun Tumpak Sewu",
+        "Pantai Balekambang",
+        "Teluk Asmoro",
+        "Omah Kayu Paralayang Batu"
+      ]
+    },
+    {
+      "name": "Gunung Bromo & Tengger (Jawa Timur)",
+      "description": "Ikon vulkanik dunia dengan kaldera pasir raksasa, savana hijau, dan air terjun megah di balik tebing curam.",
+      "locations": [
+        "Titik Peninjauan Sunrise Penanjakan",
+        "Lautan Pasir Berbisik",
+        "Kawah Aktif Bromo",
+        "Savana Padang Teletubbies",
+        "Pura Luhur Poten",
+        "Air Terjun Madakaripura"
+      ]
+    }
+  ],
+  "industry": [
+    {
+      "name": "Administrasi Niaga",
+      "description": "Manajemen operasional bisnis, tata kelola administrasi korporasi, strategi pemasaran modern, dan sistem pelayanan pelanggan.",
+      "locations": [
+        "PT Telkom Indonesia Tbk (Bandung)",
+        "Bursa Efek Indonesia / BEI (Jakarta)",
+        "PT Bank Mandiri Tbk (Kantor Pusat Jakarta)",
+        "PT Pegadaian (Bandung/Jakarta)"
+      ]
+    },
+    {
+      "name": "Bahasa Inggris",
+      "description": "Komunikasi bisnis lintas budaya, korespondensi internasional, diplomasi korporat, serta praktik kebahasaan profesional dalam ekosistem global.",
+      "locations": [
+        "British Council Indonesia (Jakarta)",
+        "Bali/Bandung International Convention Center",
+        "korporasi multinasional PT Unilever Indonesia Tbk (Cikarang)",
+        "stasiun penyiaran internasional/media massa nasional (Jakarta)"
+      ]
+    },
+    {
+      "name": "Akuntansi",
+      "description": "Audit keuangan perusahaan, sistem akuntansi manajemen, perpajakan korporasi, dan tata kelola pelaporan keuangan standar akuntansi internasional (IFRS).",
+      "locations": [
+        "Kantor Akuntan Publik (KAP) Big Four di Jakarta",
+        "Bank Indonesia (Jakarta)",
+        "PT Bank Central Asia Tbk (BCA Kantor Pusat)",
+        "Direktorat Jenderal Pajak / Kementerian Keuangan"
+      ]
+    },
+    {
+      "name": "Teknik Komputer & Informatika",
+      "description": "Arsitektur jaringan komputer, pengembangan perangkat lunak (software engineering), keamanan siber, cloud computing, dan manajemen infrastruktur IT skala besar.",
+      "locations": [
+        "PT Telkom Indonesia Tbk / Telkom Landmark Tower (Jakarta)",
+        "PT XL Axiata Tbk",
+        "PT GITS Indonesia (Bandung)",
+        "Technopark ITB / IPB",
+        "pusat data (Data Center) Telkomsigma"
+      ]
+    },
+    {
+      "name": "Teknik Refrigasi & Tata Udara",
+      "description": "Sistem pendingin komersial/industrial, rantai dingin (cold chain logistics) makanan dan obat, serta efisiensi energi sistem HVAC (Heating, Ventilation, and Air Conditioning).",
+      "locations": [
+        "PT Panasonic Manufacturing Indonesia (Jakarta)",
+        "PT Daikin Airconditioning Indonesia (Jakarta)",
+        "PT Ultrajaya Milk Industry Tbk (Bandung - Cold Chain Storage)",
+        "PT Indofood CBP Sukses Makmur Tbk"
+      ]
+    },
+    {
+      "name": "Teknik Mesin",
+      "description": "Proses manufaktur berat, mekanika material, perancangan mesin produksi massal, dan sistem otomasi mekanikal pabrik.",
+      "locations": [
+        "PT Krakatau Steel (Persero) Tbk (Cilegon)",
+        "PT Pindad (Persero) (Bandung)",
+        "PT Astra International Tbk (Karawang/Jakarta)",
+        "PT Dirgantara Indonesia (Bandung)"
+      ]
+    },
+    {
+      "name": "Teknik Listrik",
+      "description": "Transmisi dan distribusi tenaga listrik tegangan tinggi, sistem proteksi kelistrikan, otomasi gardu induk, serta manajemen energi kelistrikan industri.",
+      "locations": [
+        "PT PLN (Persero) Unit Induk Distribusi & Pembangkitan (Jawa Barat/Jawa Tengah)",
+        "PT Schneider Electric Indonesia (Cikarang)",
+        "PT ABB Sakti Industri"
+      ]
+    },
+    {
+      "name": "Teknik Energi",
+      "description": "Pengelolaan energi konvensional & terbarukan (panas bumi, surya, hidro), efisiensi energi termal, serta pengolahan minyak dan gas bumi.",
+      "locations": [
+        "PT Pertamina (Persero) Refinery Unit (Balongan/Cilacap)",
+        "Star Energy Geothermal / PLTP Wayang Windu (Pangalengan)",
+        "PT Pembangkitan Jawa-Bali (PJB) / Indonesia Power"
+      ]
+    },
+    {
+      "name": "Teknik Aero (Penerbangan)",
+      "description": "Perawatan pesawat terbang (maintenance, repair, overhaul / MRO), aerodinamika struktur pesawat, aviasi, dan manufaktur komponen dirgantara.",
+      "locations": [
+        "PT Dirgantara Indonesia / PT DI (Bandung)",
+        "GMF AeroAsia (Bandara Soekarno-Hatta, Tangerang)",
+        "PT Len Industri (Persero) (Bandung)"
+      ]
+    },
+    {
+      "name": "Teknik Sipil",
+      "description": "Manajemen konstruksi bangunan tinggi & infrastruktur jalan raya, struktur beton pracetak, mekanika tanah, serta pengawasan proyek teknik sipil skala besar.",
+      "locations": [
+        "PT Waskita Karya (Persero) Tbk (Proyek Infrastruktur Jalan Tol/Bendungan Jatigede)",
+        "PT PP (Persero) Tbk",
+        "PT Adhi Karya (Persero) Tbk (Jakarta/Jawa Barat)"
+      ]
+    },
+    {
+      "name": "Teknik Telekomunikasi",
+      "description": "Jaringan seluler 4G/5G, telekomunikasi satelit dan serat optik, transmisi sinyal digital, serta infrastruktur jaringan telekomunikasi nasional.",
+      "locations": [
+        "PT Telkomsel (Smart Office Jakarta/Bandung)",
+        "PT Indosat Ooredoo Hutchison",
+        "PT Telkom Indonesia Tbk",
+        "PT Len Industri (Persero)"
+      ]
+    },
+    {
+      "name": "Teknik Kimia",
+      "description": "Proses kimia industri skala masif, rekayasa reaksi kimia, pengolahan petrokimia, quality control bahan pangan/farmasi, dan pengelolaan limbah industri kimia.",
+      "locations": [
+        "PT Pertamina (Persero) Refinery Unit VI (Balongan, Indramayu)",
+        "PT Pupuk Kujang (Cikampek, Karawang)",
+        "PT Petrokimia Gresik (Jawa Timur)",
+        "PT Kaldu Sari Nabati Indonesia"
+      ]
+    }
+  ]
+}
