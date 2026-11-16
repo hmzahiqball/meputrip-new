@@ -2,8 +2,13 @@ import Reveal from "../components/Reveal";
 import PageIntro from "../components/PageIntro";
 import { Star } from "lucide-react";
 import { assetUrl } from "../utils/assetUrl";
-import type { TravelData } from "../types/travel";
+import type { Destination, TravelData } from "../types/travel";
+import { PhotoAttribution } from "../components/CatalogPhoto";
 export default function ReviewsPage({ data }: { data: TravelData }) {
+  const photos = data.destinations.filter(
+    (destination): destination is Destination & { image: string } =>
+      Boolean(destination.image),
+  );
   return (
     <>
       <PageIntro
@@ -49,11 +54,11 @@ export default function ReviewsPage({ data }: { data: TravelData }) {
           <p className="heading-note">
             Galeri inspirasi destinasi.
             <br />
-            Foto ilustrasi, bukan dokumentasi pelanggan.
+            Foto bersumber dari katalog destinasi.
           </p>
         </Reveal>
         <div className="documentation-grid">
-          {data.destinations.slice(0, 6).map((destination) => (
+          {photos.slice(0, 6).map((destination) => (
             <Reveal as="figure" key={destination.id}>
               <img
                 src={assetUrl(destination.image)}
@@ -69,12 +74,16 @@ export default function ReviewsPage({ data }: { data: TravelData }) {
                   }
                 </span>
                 <h3>{destination.name}</h3>
-                <small>Foto ilustrasi destinasi</small>
+                {destination.photoCredit && (
+                  <small>
+                    <PhotoAttribution credit={destination.photoCredit} />
+                  </small>
+                )}
               </figcaption>
             </Reveal>
           ))}
         </div>
-        {data.destinations.length === 0 && (
+        {photos.length === 0 && (
           <p className="empty-state">Galeri perjalanan belum tersedia.</p>
         )}
       </section>

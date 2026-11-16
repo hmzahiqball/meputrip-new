@@ -134,7 +134,7 @@ export default function IndonesiaMap({
             : "INDONESIA, SELALU ADA CERITA"}
         </span>
         <span className="map-coordinate">
-          {focused ? "02 / PILIH KOTA ATAU KABUPATEN" : "01 / PILIH PULAU"}
+          {focused ? "02 / PILIH LOKASI" : "01 / PILIH PULAU"}
         </span>
       </div>
       {focused && (
@@ -144,7 +144,11 @@ export default function IndonesiaMap({
           </button>
           <div aria-live="polite">
             <h2>Jelajahi {focused.name}.</h2>
-            <p>Pilih titik kota atau kabupaten untuk melihat pariwisatanya.</p>
+            <p>
+              {regionCities.length
+                ? "Pilih titik kawasan untuk melihat destinasi wisatanya."
+                : "Katalog wisata wilayah ini belum tersedia."}
+            </p>
           </div>
           <span className="map-city-total">
             {regionCities.length} lokasi tersedia
@@ -159,7 +163,7 @@ export default function IndonesiaMap({
           role="group"
           aria-label={
             focused
-              ? `Peta ${focused.name} diperbesar. Pilih kota atau kabupaten.`
+              ? `Peta ${focused.name} diperbesar.`
               : "Peta interaktif Indonesia. Pilih pulau untuk memperbesar."
           }
         >
@@ -396,13 +400,15 @@ export default function IndonesiaMap({
         <span>
           <MousePointer2 size={14} />
           {focused
-            ? "Klik titik lokasi untuk membuka katalog"
+            ? markers.length
+              ? "Klik titik lokasi untuk membuka katalog"
+              : "Lihat ketersediaan wilayah"
             : "Klik pulau untuk memperbesar peta"}
         </span>
         <span>
           <Compass size={15} />
           {focused
-            ? "Titik katalog, bukan batas administratif"
+            ? "Titik mewakili kawasan katalog"
             : "Satu negeri. Banyak kemungkinan."}
         </span>
         {!focused && (
@@ -430,6 +436,10 @@ export default function IndonesiaMap({
         · Titik lokasi:{" "}
         <a href="https://www.geonames.org/" target="_blank" rel="noreferrer">
           GeoNames (CC BY 4.0)
+        </a>
+        {" / "}
+        <a href="https://www.wikipedia.org/" target="_blank" rel="noreferrer">
+          Wikipedia
         </a>
       </p>
     </div>

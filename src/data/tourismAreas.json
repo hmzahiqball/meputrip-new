@@ -1,0 +1,107 @@
+{
+  "Bandung Raya & Ciwidey (Jawa Barat)": {
+    "id": "kawasan-bandung-ciwidey",
+    "label": "Bandung Raya & Ciwidey",
+    "latitude": -7.09904717,
+    "longitude": 107.43368335,
+    "source": "https://id.wikipedia.org/wiki/Ciwidey,_Bandung"
+  },
+  "Bogor & Puncak (Jawa Barat)": {
+    "id": "kawasan-bogor-puncak",
+    "label": "Bogor & Puncak",
+    "latitude": -6.5978028,
+    "longitude": 106.7992631,
+    "source": "https://id.wikipedia.org/wiki/Kota_Bogor"
+  },
+  "Kecamatan Pangalengan (Kabupaten Bandung)": {
+    "id": "kawasan-pangalengan",
+    "label": "Pangalengan",
+    "latitude": -7.175,
+    "longitude": 107.5727778,
+    "source": "https://www.geonames.org/advanced-search.html?q=bandung%2C+id&startRow=300"
+  },
+  "Cidaun & Pantai Selatan Cianjur": {
+    "id": "kawasan-cidaun",
+    "label": "Cidaun & Cianjur Selatan",
+    "latitude": -7.48617,
+    "longitude": 107.35586,
+    "source": "https://www.geonames.org/1646880/cidaunpeuntas.html"
+  },
+  "Sumedang & Sukabumi (Jawa Barat)": {
+    "id": "kawasan-sumedang-sukabumi",
+    "label": "Sumedang & Sukabumi",
+    "latitude": -6.9320004,
+    "longitude": 106.9185638,
+    "source": "https://id.wikipedia.org/wiki/Kota_Sukabumi"
+  },
+  "Pangandaran (Jawa Barat)": {
+    "id": "kawasan-pangandaran",
+    "label": "Pangandaran",
+    "latitude": -7.6969,
+    "longitude": 108.6568,
+    "source": "https://en.wikipedia.org/wiki/Pangandaran"
+  },
+  "Anyar & Cilegon (Banten)": {
+    "id": "kawasan-anyar-cilegon",
+    "label": "Anyar & Cilegon",
+    "latitude": -6.06412795,
+    "longitude": 105.92073199,
+    "source": "https://id.wikipedia.org/wiki/Anyar,_Serang"
+  },
+  "Karawang (Jawa Barat)": {
+    "id": "kawasan-karawang",
+    "label": "Karawang",
+    "latitude": -6.3050853,
+    "longitude": 107.3002579,
+    "source": "https://id.wikipedia.org/wiki/Kabupaten_Karawang"
+  },
+  "Jakarta & Kepulauan Seribu (DKI Jakarta)": {
+    "id": "kawasan-jakarta-kepulauan-seribu",
+    "label": "Jakarta & Kepulauan Seribu",
+    "latitude": -6.18,
+    "longitude": 106.83,
+    "source": "https://en.wikipedia.org/wiki/Jakarta"
+  },
+  "Cirebon & Indramayu (Jawa Barat)": {
+    "id": "kawasan-cirebon-indramayu",
+    "label": "Cirebon & Indramayu",
+    "latitude": -6.7396903,
+    "longitude": 108.5529678,
+    "source": "https://id.wikipedia.org/wiki/Kota_Cirebon"
+  },
+  "Kota Semarang & Sekitarnya (Jawa Tengah)": {
+    "id": "kawasan-semarang",
+    "label": "Semarang & Sekitarnya",
+    "latitude": -6.99,
+    "longitude": 110.4225,
+    "source": "https://id.wikipedia.org/wiki/Kota_Semarang"
+  },
+  "Yogyakarta (DI Yogyakarta)": {
+    "id": "kawasan-yogyakarta",
+    "label": "Yogyakarta",
+    "latitude": -7.80045677,
+    "longitude": 110.39128023,
+    "source": "https://id.wikipedia.org/wiki/Kota_Yogyakarta"
+  },
+  "Surabaya & Sidoarjo (Jawa Timur)": {
+    "id": "kawasan-surabaya-sidoarjo",
+    "label": "Surabaya & Sidoarjo",
+    "latitude": -7.2462836,
+    "longitude": 112.7377672,
+    "source": "https://id.wikipedia.org/wiki/Kota_Surabaya"
+  },
+  "Malang & Batu (Jawa Timur)": {
+    "id": "kawasan-malang-batu",
+    "label": "Malang & Batu",
+    "latitude": -7.96893041,
+    "longitude": 112.63272772,
+    "source": "https://id.wikipedia.org/wiki/Kota_Malang"
+  },
+  "Gunung Bromo & Tengger (Jawa Timur)": {
+    "id": "kawasan-bromo-tengger",
+    "label": "Bromo & Tengger",
+    "latitude": -7.94166667,
+    "longitude": 112.95,
+    "source": "https://en.wikipedia.org/wiki/Mount_Bromo"
+  }
+}

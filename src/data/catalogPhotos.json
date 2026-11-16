@@ -1,0 +1,282 @@
+{
+  "astra": {
+    "author": "MrRamChandra",
+    "image": "/images/catalog/astra.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Menara_Astra.jpg",
+    "title": "Menara_Astra.jpg"
+  },
+  "balekambang": {
+    "author": "Bolaruwet",
+    "image": "/images/catalog/balekambang.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wisata-pantai-balekambang.jpg",
+    "title": "Wisata-pantai-balekambang.jpg"
+  },
+  "batu-karas": {
+    "author": "Ridwanad",
+    "image": "/images/catalog/batu-karas.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sunrise_Batu_karas_Pangandaran.jpg",
+    "title": "Sunrise_Batu_karas_Pangandaran.jpg"
+  },
+  "bei": {
+    "author": "Bursa Efek Indonesia",
+    "image": "/images/catalog/bei.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gedung-bursa-efek-1_(1).jpg",
+    "title": "Gedung-bursa-efek-1_(1).jpg"
+  },
+  "bromo": {
+    "author": "Thomas Hirsch (= user Ravn)",
+    "image": "/images/catalog/bromo.webp",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Bromo_at_sunrise,_showing_its_volcanoes_and_Mount_Semeru_(background).jpg",
+    "title": "Mount Bromo at sunrise, showing its volcanoes and Mount Semeru (background).jpg"
+  },
+  "cikoneng": {
+    "author": "Arif Permana Putra",
+    "image": "/images/catalog/cikoneng.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mercusuar_Anyer_(10).jpg",
+    "title": "Mercusuar Anyer (10).jpg"
+  },
+  "cimarinjung": {
+    "author": "Eurekalabdawara",
+    "image": "/images/catalog/cimarinjung.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Curug_Cimarinjung,_Geopark_Ciletuh,_Ciemas,_Sukabumi,_Jawa_Barat_0607201601.jpg",
+    "title": "Curug Cimarinjung, Geopark Ciletuh, Ciemas, Sukabumi, Jawa Barat 0607201601.jpg"
+  },
+  "coban-rondo": {
+    "author": "Ivuvisual",
+    "image": "/images/catalog/coban-rondo.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Air_Terjun_Coban_Rondo.jpg",
+    "title": "Air_Terjun_Coban_Rondo.jpg"
+  },
+  "dirgantara": {
+    "author": "BxHxTxCx (using album)",
+    "image": "/images/catalog/dirgantara.webp",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PT_Dirgantara_Indonesia_(26714037004).jpg",
+    "title": "PT Dirgantara Indonesia (26714037004).jpg"
+  },
+  "goa-pindul": {
+    "author": "Tommy Gustaviano Yeza",
+    "image": "/images/catalog/goa-pindul.webp",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pindul_Cave,_Indonesia.JPG",
+    "title": "Pindul_Cave,_Indonesia.JPG"
+  },
+  "green-canyon": {
+    "author": "Citumang",
+    "image": "/images/catalog/green-canyon.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_Canyon_Pangandaran.jpg",
+    "title": "Green Canyon Pangandaran.jpg"
+  },
+  "kawah-putih": {
+    "author": "Galeri ega",
+    "image": "/images/catalog/kawah-putih.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Alam_Kawah_Putih_Ciwidey.jpg",
+    "title": "Panorama Alam Kawah Putih Ciwidey.jpg"
+  },
+  "kebun-raya-bogor": {
+    "author": "Ilham Mufti Laksono",
+    "image": "/images/catalog/kebun-raya-bogor.webp",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kebun_Raya_Bogor_003.jpg",
+    "title": "Kebun Raya Bogor 003.jpg"
+  },
+  "kepulauan-seribu": {
+    "author": "Lucky Christiawan",
+    "image": "/images/catalog/kepulauan-seribu.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:East_side_of_Pari_Island,_Kepulauan_Seribu_National_Park.jpg",
+    "title": "East_side_of_Pari_Island,_Kepulauan_Seribu_National_Park.jpg"
+  },
+  "madakaripura": {
+    "author": "Thomas Fuhrmann",
+    "image": "/images/catalog/madakaripura.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Madakaripura_Waterfall_-_Indonesia.jpg",
+    "title": "Madakaripura_Waterfall_-_Indonesia.jpg"
+  },
+  "muara-angke": {
+    "author": "Cun Cun",
+    "image": "/images/catalog/muara-angke.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rawa_suaka_margasatwa_muara_angke.jpg",
+    "title": "Rawa_suaka_margasatwa_muara_angke.jpg"
+  },
+  "palabuhanratu": {
+    "author": "Apri DAV",
+    "image": "/images/catalog/palabuhanratu.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Pantai_Pelabuhan_Ratu_Sukabumi.jpg",
+    "title": "Panorama_Pantai_Pelabuhan_Ratu_Sukabumi.jpg"
+  },
+  "pangandaran": {
+    "author": "Hahnsaja",
+    "image": "/images/catalog/pangandaran.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pantai_Pangandaran.jpg",
+    "title": "Pantai_Pangandaran.jpg"
+  },
+  "parangtritis": {
+    "author": "Cecee ch",
+    "image": "/images/catalog/parangtritis.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dusk_till_dawn_(cropped).jpg",
+    "title": "Dusk_till_dawn_(cropped).jpg"
+  },
+  "pupuk-kujang": {
+    "author": "Ojiedarojie",
+    "image": "/images/catalog/pupuk-kujang.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kawasan_PT_Pupuk_Kujang_Cikampek.jpg",
+    "title": "Kawasan PT Pupuk Kujang Cikampek.jpg"
+  },
+  "pura-poten": {
+    "author": "Stegop",
+    "image": "/images/catalog/pura-poten.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bromo-s6-14-2b.jpg",
+    "title": "Bromo-s6-14-2b.jpg"
+  },
+  "ragunan": {
+    "author": "Gunawan Kartapranata",
+    "image": "/images/catalog/ragunan.webp",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ragunan_Zoo_Gate.jpg",
+    "title": "Ragunan_Zoo_Gate.jpg"
+  },
+  "ranca-upas": {
+    "author": "Reizka Dwidianto",
+    "image": "/images/catalog/ranca-upas.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Penangkaran_Rusa_Ranca_Upas,_Kampung_Cai,_Kabupaten_Bandung,_Jawa_Barat,_Indonesia_(6).jpg",
+    "title": "Penangkaran_Rusa_Ranca_Upas,_Kampung_Cai,_Kabupaten_Bandung,_Jawa_Barat,_Indonesia_(6).jpg"
+  },
+  "rawa-pening": {
+    "author": "kutu_jangkrik",
+    "image": "/images/catalog/rawa-pening.webp",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rawa_Pening_Central_Java.jpg",
+    "title": "Rawa_Pening_Central_Java.jpg"
+  },
+  "setu-babakan": {
+    "author": "Herryz",
+    "image": "/images/catalog/setu-babakan.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Setu_Babakan.jpg",
+    "title": "Setu_Babakan.jpg"
+  },
+  "situ-cileunca": {
+    "author": "Ilham jayakesuma",
+    "image": "/images/catalog/situ-cileunca.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cileunca_Lake.jpg",
+    "title": "Cileunca_Lake.jpg"
+  },
+  "situ-cisanti": {
+    "author": "Satria Budiana Tresna",
+    "image": "/images/catalog/situ-cisanti.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gunung_Wayang_di_Situ_Cisanti.jpg",
+    "title": "Gunung_Wayang_di_Situ_Cisanti.jpg"
+  },
+  "situ-patenggang": {
+    "author": "Anastasiastephaniek",
+    "image": "/images/catalog/situ-patenggang.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Situ_Patenggang.jpg",
+    "title": "Situ Patenggang.jpg"
+  },
+  "sri-gethuk": {
+    "author": "JV06Nofi Andari",
+    "image": "/images/catalog/sri-gethuk.webp",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Air_terjun_Sri_Gethuk.jpg",
+    "title": "Air_terjun_Sri_Gethuk.jpg"
+  },
+  "suramadu": {
+    "author": "Sakurai Midori",
+    "image": "/images/catalog/suramadu.webp",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Suramadu_Bridge_5.JPG",
+    "title": "Suramadu_Bridge_5.JPG"
+  },
+  "tangkuban-perahu": {
+    "author": "DimasSepur",
+    "image": "/images/catalog/tangkuban-perahu.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_Kawah_Ratu_Crater_in_Mt.Tangkuban_Perahu.jpg",
+    "title": "Panoramic_View_of_Kawah_Ratu_Crater_in_Mt.Tangkuban_Perahu.jpg"
+  },
+  "tebing-breksi": {
+    "author": "Ardhan Febriansyah",
+    "image": "/images/catalog/tebing-breksi.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lahan_parkir_dan_amfiteater_di_Tebing_Breksi_Yogyakarta.jpg",
+    "title": "Lahan_parkir_dan_amfiteater_di_Tebing_Breksi_Yogyakarta.jpg"
+  },
+  "timang": {
+    "author": "Yasuspade",
+    "image": "/images/catalog/timang.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gondala_pantai_Timang_-_Gunung_Kidul,_DIY.jpg",
+    "title": "Gondala_pantai_Timang_-_Gunung_Kidul,_DIY.jpg"
+  },
+  "tumpak-sewu": {
+    "author": "Muhyiddin",
+    "image": "/images/catalog/tumpak-sewu.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tumpak_sewu_waterfall.jpg",
+    "title": "Tumpak_sewu_waterfall.jpg"
+  },
+  "waduk-jatigede": {
+    "author": "Riki Purnama Putra",
+    "image": "/images/catalog/waduk-jatigede.webp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Waduk_Jatigede,_Kabupaten_Sumedang,_26062017.jpg",
+    "title": "Waduk_Jatigede,_Kabupaten_Sumedang,_26062017.jpg"
+  }
+}

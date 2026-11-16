@@ -60,7 +60,7 @@ export default function Footer({
           <a href="#/pesan-perjalanan/destinasi">
             Destinasi <ArrowUpRight size={12} />
           </a>
-          <a href="#/pesan-perjalanan/katalog-jawa">Katalog Pulau Jawa</a>
+          <a href="#/kunjungan-industri">Kunjungan Industri</a>
           <a href="#/pesan-perjalanan/open-trip">Open trip</a>
           <a href="#/pesan-perjalanan/custom-trip">Custom trip</a>
           <a href="#/profil-mepu">Profil Mepu</a>

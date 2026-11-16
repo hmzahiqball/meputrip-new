@@ -1,0 +1,397 @@
+{
+  "programs": {
+    "Administrasi Niaga": [
+      "telkom-bandung",
+      "bei",
+      "mandiri",
+      "pegadaian-jakarta",
+      "pegadaian-bandung"
+    ],
+    "Bahasa Inggris": [
+      "british-council",
+      "bandung-convention",
+      "unilever",
+      "tvri"
+    ],
+    "Akuntansi": [
+      "pwc",
+      "deloitte",
+      "kpmg",
+      "ey",
+      "bank-indonesia",
+      "bca",
+      "djp"
+    ],
+    "Teknik Komputer & Informatika": [
+      "telkom-jakarta",
+      "xlsmart",
+      "gits",
+      "itb",
+      "ipb",
+      "telkomsigma",
+      "neutradc-serpong"
+    ],
+    "Teknik Refrigasi & Tata Udara": [
+      "panasonic",
+      "daikin",
+      "ultrajaya",
+      "indofood"
+    ],
+    "Teknik Mesin": [
+      "krakatau",
+      "pindad",
+      "astra",
+      "astra-karawang",
+      "dirgantara"
+    ],
+    "Teknik Listrik": ["pln-bandung", "pln-semarang", "schneider", "abb"],
+    "Teknik Energi": [
+      "pertamina-balongan",
+      "pertamina-cilacap",
+      "wayang-windu",
+      "pjb",
+      "indonesia-power"
+    ],
+    "Teknik Aero (Penerbangan)": ["dirgantara", "gmf", "len"],
+    "Teknik Sipil": ["waskita", "jatigede", "ptpp", "adhi"],
+    "Teknik Telekomunikasi": ["telkomsel", "indosat", "telkom-jakarta", "len"],
+    "Teknik Kimia": [
+      "pertamina-balongan",
+      "pupuk-kujang",
+      "petrokimia",
+      "nabati"
+    ]
+  },
+  "sites": {
+    "telkom-bandung": {
+      "name": "Telkom Indonesia – Graha Merah Putih",
+      "location": "Jl. Japati No. 1, Kota Bandung",
+      "source": "https://www.telkom.co.id/minio/show/data/lampiran/1744857450698_original_Buyback%20Telkom%20Tahun%202025%20%281%29.pdf",
+      "mapQuery": "Telkom Indonesia – Graha Merah Putih Jl. Japati No. 1, Kota Bandung"
+    },
+    "bei": {
+      "name": "Bursa Efek Indonesia",
+      "location": "Gedung Bursa Efek Indonesia, Jl. Jend. Sudirman Kav. 52–53, Jakarta Selatan",
+      "source": "https://www.idx.co.id/id/tentang-bei/hubungi-kami/",
+      "mapQuery": "Bursa Efek Indonesia Gedung Bursa Efek Indonesia, Jl. Jend. Sudirman Kav. 52–53, Jakarta Selatan"
+    },
+    "mandiri": {
+      "name": "Bank Mandiri – Plaza Mandiri",
+      "location": "Jl. Jend. Gatot Subroto Kav. 36–38, Jakarta Selatan",
+      "source": "https://www.bankmandiri.co.id/web/guest/kontak",
+      "mapQuery": "Bank Mandiri – Plaza Mandiri Jl. Jend. Gatot Subroto Kav. 36–38, Jakarta Selatan"
+    },
+    "pegadaian-jakarta": {
+      "name": "Pegadaian – Kantor Pusat",
+      "location": "Jl. Kramat Raya No. 162, Jakarta Pusat",
+      "source": "https://pegadaian.co.id/hubungi-kami",
+      "mapQuery": "Pegadaian – Kantor Pusat Jl. Kramat Raya No. 162, Jakarta Pusat"
+    },
+    "pegadaian-bandung": {
+      "name": "Pegadaian – Cabang Pungkur",
+      "location": "Jl. Pungkur No. 123, Kota Bandung",
+      "source": "https://pegadaian.co.id/lokasi-cabang/pegadaian-cp-pungkur",
+      "mapQuery": "Pegadaian – Cabang Pungkur Jl. Pungkur No. 123, Kota Bandung",
+      "note": "Referensi cabang Bandung. Unit penerima rombongan perlu dikonfirmasi."
+    },
+    "british-council": {
+      "name": "British Council Indonesia",
+      "location": "Office 8, SCBD Lot 28, Jl. Senopati Raya No. 8B, Jakarta Selatan",
+      "source": "https://www.britishcouncil.id/hubungi",
+      "mapQuery": "British Council Indonesia Office 8, SCBD Lot 28, Jl. Senopati Raya No. 8B, Jakarta Selatan"
+    },
+    "bandung-convention": {
+      "name": "Bandung Convention Centre",
+      "location": "Jl. Soekarno-Hatta No. 354, Kota Bandung",
+      "source": "https://www.waze.com/live-map/directions/id/jawa-barat/bandung-convention-centre?to=place.ChIJR47S_LnpaC4RaemqtTh6mp4",
+      "mapQuery": "Bandung Convention Centre Jl. Soekarno-Hatta No. 354, Kota Bandung",
+      "note": "Usulan lokasi di Bandung. Penyebutan Bali/Bandung dalam PDF memerlukan konfirmasi pilihan venue."
+    },
+    "unilever": {
+      "name": "Unilever Indonesia – Kawasan Pabrik Jababeka",
+      "location": "Kawasan Industri Jababeka, Cikarang, Kabupaten Bekasi",
+      "source": "https://www.unilever.co.id/en/our-company/about-unilever-indonesia/",
+      "mapQuery": "Unilever Indonesia – Kawasan Pabrik Jababeka Kawasan Industri Jababeka, Cikarang, Kabupaten Bekasi",
+      "note": "Unit pabrik dan pintu masuk rombongan perlu dikonfirmasi."
+    },
+    "tvri": {
+      "name": "TVRI – Kantor Pusat",
+      "location": "Jl. Gerbang Pemuda, Senayan, Jakarta Pusat",
+      "source": "https://jdih.tvri.go.id/page/hubungi-kami",
+      "mapQuery": "TVRI – Kantor Pusat Jl. Gerbang Pemuda, Senayan, Jakarta Pusat",
+      "note": "Contoh instansi penyiaran nasional untuk pilihan media yang disebut secara umum di PDF."
+    },
+    "pwc": {
+      "name": "PwC Indonesia",
+      "location": "WTC 3, Jl. Jend. Sudirman, Jakarta Selatan",
+      "source": "https://www.pwc.com/id/en/about-us/contact-pwc-indonesia.html",
+      "mapQuery": "PwC Indonesia WTC 3, Jl. Jend. Sudirman, Jakarta Selatan"
+    },
+    "deloitte": {
+      "name": "Deloitte Indonesia",
+      "location": "The Plaza Office Tower, Jl. M.H. Thamrin, Jakarta Pusat",
+      "source": "https://www.deloitte.com/southeast-asia/en/offices/sea-offices/id-jakarta.html",
+      "mapQuery": "Deloitte Indonesia The Plaza Office Tower, Jl. M.H. Thamrin, Jakarta Pusat"
+    },
+    "kpmg": {
+      "name": "KPMG Indonesia",
+      "location": "Jakarta Mori Tower, Jl. Jend. Sudirman Kav. 40–41, Jakarta Pusat",
+      "source": "https://kpmg.com/id/en/about/our-offices.html",
+      "mapQuery": "KPMG Indonesia Jakarta Mori Tower, Jl. Jend. Sudirman Kav. 40–41, Jakarta Pusat"
+    },
+    "ey": {
+      "name": "EY Indonesia",
+      "location": "Gedung Bursa Efek Indonesia, Jl. Jend. Sudirman Kav. 52–53, Jakarta Selatan",
+      "source": "https://www.ey.com/en_cf/locations/indonesia",
+      "mapQuery": "EY Indonesia Gedung Bursa Efek Indonesia, Jl. Jend. Sudirman Kav. 52–53, Jakarta Selatan"
+    },
+    "bank-indonesia": {
+      "name": "Bank Indonesia – Kantor Pusat",
+      "location": "Jl. M.H. Thamrin No. 2, Jakarta Pusat",
+      "source": "https://www.bi.go.id/id/layanan/kunjungan-bi/default.aspx",
+      "mapQuery": "Bank Indonesia – Kantor Pusat Jl. M.H. Thamrin No. 2, Jakarta Pusat"
+    },
+    "bca": {
+      "name": "BCA – Menara BCA",
+      "location": "Grand Indonesia, Jl. M.H. Thamrin No. 1, Jakarta Pusat",
+      "source": "https://www.bca.co.id/lokasi",
+      "mapQuery": "BCA – Menara BCA Grand Indonesia, Jl. M.H. Thamrin No. 1, Jakarta Pusat"
+    },
+    "djp": {
+      "name": "Direktorat Jenderal Pajak – Kantor Pusat",
+      "location": "Jl. Jend. Gatot Subroto Kav. 40–42, Jakarta Selatan",
+      "source": "https://www.pajak.go.id/id/daftar-unit-kerja",
+      "mapQuery": "Direktorat Jenderal Pajak – Kantor Pusat Jl. Jend. Gatot Subroto Kav. 40–42, Jakarta Selatan"
+    },
+    "telkom-jakarta": {
+      "name": "Telkom Indonesia – Telkom Landmark Tower",
+      "location": "The Telkom Hub, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan",
+      "source": "https://www.telkom.co.id/sites/profil-telkom/id_ID/page/contact-us-1061",
+      "mapQuery": "Telkom Indonesia – Telkom Landmark Tower The Telkom Hub, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan"
+    },
+    "xlsmart": {
+      "name": "XLSMART – XLSMART Tower",
+      "location": "Jl. H.R. Rasuna Said, Kuningan, Jakarta Selatan",
+      "source": "https://www.xlsmart.co.id/id",
+      "mapQuery": "XLSMART – XLSMART Tower Jl. H.R. Rasuna Said, Kuningan, Jakarta Selatan",
+      "note": "XLSMART adalah nama perusahaan setelah penggabungan yang melibatkan XL Axiata."
+    },
+    "gits": {
+      "name": "GITS Indonesia",
+      "location": "Jl. Magna Timur No. 106, Summarecon Bandung, Kota Bandung",
+      "source": "https://gits.id/about/",
+      "mapQuery": "GITS Indonesia Jl. Magna Timur No. 106, Summarecon Bandung, Kota Bandung"
+    },
+    "itb": {
+      "name": "ITB Innovation Park Bandung Technopolis",
+      "location": "Summarecon Bandung, Gedebage, Kota Bandung",
+      "source": "https://dhkt.itb.ac.id/id/berita/detail/itb-innovation-park-bandung-technopolis-resmi-beroperasi",
+      "mapQuery": "ITB Innovation Park Bandung Technopolis Summarecon Bandung, Gedebage, Kota Bandung"
+    },
+    "ipb": {
+      "name": "Science Techno Park IPB University",
+      "location": "Kampus IPB Taman Kencana, Kota Bogor",
+      "source": "https://www.ipb.ac.id/page/kampustamankencana/",
+      "mapQuery": "Science Techno Park IPB University Kampus IPB Taman Kencana, Kota Bogor"
+    },
+    "telkomsigma": {
+      "name": "Telkomsigma – Kantor Publik",
+      "location": "Telkom Landmark Tower, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan",
+      "source": "https://www.telkomsigma.co.id/contact-us-2/",
+      "mapQuery": "Telkomsigma – Kantor Publik Telkom Landmark Tower, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan",
+      "note": "Alamat rujukan kantor. Pusat data yang bisa dikunjungi harus ditentukan bersama pihak perusahaan."
+    },
+    "panasonic": {
+      "name": "Panasonic Manufacturing Indonesia",
+      "location": "Jl. Raya Bogor Km. 29, Pekayon, Pasar Rebo, Jakarta Timur",
+      "source": "https://www.panasonic.com/id/corporate/profile/group-companies.html",
+      "mapQuery": "Panasonic Manufacturing Indonesia Jl. Raya Bogor Km. 29, Pekayon, Pasar Rebo, Jakarta Timur"
+    },
+    "daikin": {
+      "name": "Daikin Airconditioning Indonesia – Kantor Pusat",
+      "location": "Menara Astra, Jl. Jend. Sudirman Kav. 5–6, Jakarta Pusat",
+      "source": "https://www.daikin.co.id/contact",
+      "mapQuery": "Daikin Airconditioning Indonesia – Kantor Pusat Menara Astra, Jl. Jend. Sudirman Kav. 5–6, Jakarta Pusat",
+      "note": "Alamat kantor pusat. Lokasi fasilitas untuk kunjungan perlu dikonfirmasi."
+    },
+    "ultrajaya": {
+      "name": "Ultrajaya – Pabrik Cimareme",
+      "location": "Jl. Raya Cimareme No. 131, Padalarang, Kabupaten Bandung Barat",
+      "source": "https://www.ultrajaya.co.id/contact-us/factory/1988",
+      "mapQuery": "Ultrajaya – Pabrik Cimareme Jl. Raya Cimareme No. 131, Padalarang, Kabupaten Bandung Barat",
+      "note": "Akses ke fasilitas rantai dingin perlu dikonfirmasi."
+    },
+    "indofood": {
+      "name": "Indofood CBP – Kantor Pusat",
+      "location": "Sudirman Plaza, Jl. Jend. Sudirman Kav. 76–78, Jakarta Selatan",
+      "source": "https://www.indofoodcbp.com/contact-us",
+      "mapQuery": "Indofood CBP – Kantor Pusat Sudirman Plaza, Jl. Jend. Sudirman Kav. 76–78, Jakarta Selatan",
+      "note": "Alamat kantor pusat. Unit produksi untuk kunjungan perlu dikonfirmasi."
+    },
+    "krakatau": {
+      "name": "Krakatau Steel – Cilegon",
+      "location": "Jl. Industri No. 5, Kota Cilegon, Banten",
+      "source": "https://www.krakatausteel.org/",
+      "mapQuery": "Krakatau Steel – Cilegon Jl. Industri No. 5, Kota Cilegon, Banten"
+    },
+    "pindad": {
+      "name": "Pindad – Bandung",
+      "location": "Jl. Jend. Gatot Subroto No. 517, Kota Bandung",
+      "source": "https://pindad.com/profil-perusahaan",
+      "mapQuery": "Pindad – Bandung Jl. Jend. Gatot Subroto No. 517, Kota Bandung"
+    },
+    "astra": {
+      "name": "Astra International – Menara Astra",
+      "location": "Jl. Jend. Sudirman Kav. 5–6, Jakarta Pusat",
+      "source": "https://www.astra.co.id/contact-us",
+      "mapQuery": "Astra International – Menara Astra Jl. Jend. Sudirman Kav. 5–6, Jakarta Pusat",
+      "note": "Alamat kantor pusat Astra International."
+    },
+    "astra-karawang": {
+      "name": "Astra Daihatsu Motor – Pabrik Karawang",
+      "location": "Kawasan Industri Suryacipta, Kabupaten Karawang",
+      "source": "https://daihatsu.co.id/manufacture/",
+      "mapQuery": "Astra Daihatsu Motor – Pabrik Karawang Kawasan Industri Suryacipta, Kabupaten Karawang",
+      "note": "Contoh fasilitas manufaktur grup Astra di Karawang."
+    },
+    "dirgantara": {
+      "name": "PT Dirgantara Indonesia",
+      "location": "Jl. Pajajaran No. 154, Kota Bandung",
+      "source": "https://www.indonesian-aerospace.com/id/kontak",
+      "mapQuery": "PT Dirgantara Indonesia Jl. Pajajaran No. 154, Kota Bandung"
+    },
+    "pln-bandung": {
+      "name": "PLN – Unit Induk Distribusi Jawa Barat",
+      "location": "Jl. Asia Afrika No. 63, Kota Bandung",
+      "source": "https://web.pln.co.id/statics/uploads/2025/07/Statistik-PLN-2024-Audited-Indo-Eng-Final-2.pdf",
+      "mapQuery": "PLN – Unit Induk Distribusi Jawa Barat Jl. Asia Afrika No. 63, Kota Bandung",
+      "note": "Alamat kantor distribusi. Fasilitas pembangkitan yang menerima kunjungan perlu dikonfirmasi."
+    },
+    "pln-semarang": {
+      "name": "PLN – Unit Induk Distribusi Jawa Tengah dan DI Yogyakarta",
+      "location": "Jl. Pemuda No. 93, Kota Semarang",
+      "source": "https://web.pln.co.id/statics/uploads/2025/07/Statistik-PLN-2024-Audited-Indo-Eng-Final-2.pdf",
+      "mapQuery": "PLN – Unit Induk Distribusi Jawa Tengah dan DI Yogyakarta Jl. Pemuda No. 93, Kota Semarang",
+      "note": "Alamat kantor distribusi. Fasilitas pembangkitan yang menerima kunjungan perlu dikonfirmasi."
+    },
+    "schneider": {
+      "name": "Schneider Electric – Cikarang",
+      "location": "Kawasan Industri EJIP, Cikarang Selatan, Kabupaten Bekasi",
+      "source": "https://www.se.com/id/id/about-us/newsroom/news/press-releases/schneider-electric-cikarang-tegaskan-komitmen-untuk-indonesia-melalui-tonggak-pencapaian-30-tahun-dan-pembaruan-innovation-hub-68d111fdb9b399681e0433ae/",
+      "mapQuery": "Schneider Electric – Cikarang Kawasan Industri EJIP, Cikarang Selatan, Kabupaten Bekasi"
+    },
+    "abb": {
+      "name": "ABB Sakti Industri – Cibitung",
+      "location": "Kawasan Industri MM2100, Kabupaten Bekasi",
+      "source": "https://new.abb.com/id/about/abb-locations",
+      "mapQuery": "ABB Sakti Industri – Cibitung Kawasan Industri MM2100, Kabupaten Bekasi"
+    },
+    "pertamina-balongan": {
+      "name": "Kilang Pertamina Internasional – RU VI Balongan",
+      "location": "Jl. Raya Balongan, Kabupaten Indramayu",
+      "source": "https://kpi.pertamina.com/id/profil-perusahaan/struktur-grup-perusahaan",
+      "mapQuery": "Kilang Pertamina Internasional – RU VI Balongan Jl. Raya Balongan, Kabupaten Indramayu"
+    },
+    "pertamina-cilacap": {
+      "name": "Kilang Pertamina Internasional – RU IV Cilacap",
+      "location": "Kabupaten Cilacap, Jawa Tengah",
+      "source": "https://kpi.pertamina.com/id/profil-perusahaan/struktur-grup-perusahaan",
+      "mapQuery": "Kilang Pertamina Internasional – RU IV Cilacap Kabupaten Cilacap, Jawa Tengah"
+    },
+    "wayang-windu": {
+      "name": "Star Energy Geothermal – Wayang Windu",
+      "location": "Pangalengan, Kabupaten Bandung",
+      "source": "https://www.starenergygeothermal.co.id/overview/",
+      "mapQuery": "Star Energy Geothermal – Wayang Windu Pangalengan, Kabupaten Bandung"
+    },
+    "pjb": {
+      "name": "PLN Nusantara Power – Kantor Pusat",
+      "location": "Jl. Ketintang Baru No. 11, Kota Surabaya",
+      "source": "https://www.pln.co.id/struktur-grup-pln-id",
+      "mapQuery": "PLN Nusantara Power – Kantor Pusat Jl. Ketintang Baru No. 11, Kota Surabaya",
+      "note": "Nama perusahaan yang sebelumnya tercantum sebagai PT Pembangkitan Jawa-Bali (PJB)."
+    },
+    "indonesia-power": {
+      "name": "PLN Indonesia Power – Kantor Pusat",
+      "location": "Jl. Jend. Gatot Subroto Kav. 18, Jakarta Selatan",
+      "source": "https://www.waze.com/id/live-map/directions/id/daerah-khusus-ibukota-jakarta/pt-pln-indonesia-power-kantor-pusat?to=place.ChIJRU0ZytnzaS4RCdH_-tlb1jI",
+      "mapQuery": "PLN Indonesia Power – Kantor Pusat Jl. Jend. Gatot Subroto Kav. 18, Jakarta Selatan"
+    },
+    "gmf": {
+      "name": "GMF AeroAsia",
+      "location": "Kawasan Perkantoran Bandara Soekarno-Hatta, Kota Tangerang",
+      "source": "https://www.gmf-aeroasia.co.id/corporate-contact-info",
+      "mapQuery": "GMF AeroAsia Kawasan Perkantoran Bandara Soekarno-Hatta, Kota Tangerang"
+    },
+    "len": {
+      "name": "Len Industri",
+      "location": "Jl. Soekarno-Hatta No. 442, Kota Bandung",
+      "source": "https://prima-ptki.kemenag.go.id/member/employer/view/708/PT-Len-Industri-Persero",
+      "mapQuery": "Len Industri Jl. Soekarno-Hatta No. 442, Kota Bandung"
+    },
+    "waskita": {
+      "name": "Waskita Karya – Kantor Pusat",
+      "location": "Waskita Rajawali Tower, Jl. M.T. Haryono, Cawang, Jakarta Timur",
+      "source": "https://investor.waskita.co.id/newsroom/AnnualReport2025-WSKT-att8.pdf",
+      "mapQuery": "Waskita Karya – Kantor Pusat Waskita Rajawali Tower, Jl. M.T. Haryono, Cawang, Jakarta Timur",
+      "note": "Rujukan kantor untuk koordinasi. Proyek jalan tol atau lokasi kunjungan lapangan belum ditentukan."
+    },
+    "ptpp": {
+      "name": "PT PP – Plaza PP",
+      "location": "Jl. T.B. Simatupang No. 57, Pasar Rebo, Jakarta Timur",
+      "source": "https://ptpp.co.id/en/about-us/our-profile",
+      "mapQuery": "PT PP – Plaza PP Jl. T.B. Simatupang No. 57, Pasar Rebo, Jakarta Timur"
+    },
+    "adhi": {
+      "name": "Adhi Karya – Kantor Pusat",
+      "location": "Jl. Raya Pasar Minggu Km. 18, Jakarta Selatan",
+      "source": "https://adhi.co.id/hubungi-kami/",
+      "mapQuery": "Adhi Karya – Kantor Pusat Jl. Raya Pasar Minggu Km. 18, Jakarta Selatan"
+    },
+    "telkomsel": {
+      "name": "Telkomsel Smart Office",
+      "location": "The Telkom Hub, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan",
+      "source": "https://www.telkomsel.com/support/faq/di-mana-saja-lokasi-yang-tercakup-oleh-jaringan-telkomsel-5g",
+      "mapQuery": "Telkomsel Smart Office The Telkom Hub, Jl. Jend. Gatot Subroto Kav. 52, Jakarta Selatan",
+      "note": "Lokasi Smart Office di Jakarta. Unit Bandung yang dimaksud PDF perlu dikonfirmasi."
+    },
+    "indosat": {
+      "name": "Indosat Ooredoo Hutchison – Kantor Pusat",
+      "location": "Jl. Medan Merdeka Barat No. 21, Jakarta Pusat",
+      "source": "https://ioh.co.id/id/ioh-contact-us",
+      "mapQuery": "Indosat Ooredoo Hutchison – Kantor Pusat Jl. Medan Merdeka Barat No. 21, Jakarta Pusat"
+    },
+    "pupuk-kujang": {
+      "name": "Pupuk Kujang – Cikampek",
+      "location": "Jl. Jend. Ahmad Yani No. 39, Cikampek, Kabupaten Karawang",
+      "source": "https://pupuk-kujang.co.id/",
+      "mapQuery": "Pupuk Kujang – Cikampek Jl. Jend. Ahmad Yani No. 39, Cikampek, Kabupaten Karawang"
+    },
+    "petrokimia": {
+      "name": "Petrokimia Gresik",
+      "location": "Jl. Jend. Ahmad Yani, Kabupaten Gresik",
+      "source": "https://petrokimia-gresik.com/?hl=id",
+      "mapQuery": "Petrokimia Gresik Jl. Jend. Ahmad Yani, Kabupaten Gresik"
+    },
+    "nabati": {
+      "name": "Kaldu Sari Nabati Indonesia – Cicalengka",
+      "location": "Jl. Raya Cicalengka–Majalaya Km. 1, Kabupaten Bandung",
+      "source": "https://www.waze.com/live-map/directions/id/jawa-barat/pt-kaldu-sari-nabati-indonesia-cicalengka?to=place.ChIJNSjLUNDFaC4R4V5VdiSWmww",
+      "mapQuery": "Kaldu Sari Nabati Indonesia – Cicalengka Jl. Raya Cicalengka–Majalaya Km. 1, Kabupaten Bandung"
+    },
+    "neutradc-serpong": {
+      "name": "NeutraDC – Pusat Data Serpong",
+      "location": "Serpong, Tangerang Selatan, Banten",
+      "source": "https://www.neutradc.com/about-us",
+      "mapQuery": "NeutraDC – Pusat Data Serpong Serpong, Tangerang Selatan, Banten",
+      "note": "Rujukan fasilitas Telkom Group. Izin kunjungan dan titik temu perlu dikonfirmasi dengan pengelola."
+    },
+    "jatigede": {
+      "name": "Bendungan Jatigede",
+      "location": "Kabupaten Sumedang, Jawa Barat",
+      "source": "https://sda.pu.go.id/post/detail/pemerintah_dorong_ketahanan_pangan_nasional_melalui_optimalisasi_bendungan_jatigede",
+      "mapQuery": "Bendungan Jatigede Kabupaten Sumedang, Jawa Barat",
+      "note": "Lokasi proyek infrastruktur yang disebut di PDF. Pengelola dan prosedur kunjungan perlu dikonfirmasi."
+    }
+  }
+}

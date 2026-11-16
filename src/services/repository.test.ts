@@ -8,6 +8,8 @@ import {
 } from "./repository";
 import { mockData } from "../data/mock";
 import paths from "../data/mapPaths.json";
+import catalogs from "../data/javaCatalogs.json";
+import industry from "../data/industryLocations.json";
 describe("Google Sheets CSV contract", () => {
   it("handles BOM, commas, quoted newlines and escaped quotes", () => {
     expect(
@@ -31,10 +33,40 @@ describe("Google Sheets CSV contract", () => {
   });
 });
 describe("Region → City → Destination data integrity", () => {
-  it("loads complete mock data without a key", async () => {
+  it("loads the Java travel catalog without displaying sample locations", async () => {
     const data = await mockRepository.load();
     expect(data.regions).toHaveLength(8);
-    expect(data.destinations.length).toBeGreaterThan(20);
+    const sampleIds = new Set(mockData.destinations.map(({ id }) => id));
+    const expectedCount =
+      catalogs.nature.reduce(
+        (count, area) => count + area.locations.length,
+        0,
+      ) - 1;
+    expect(data.destinations).toHaveLength(expectedCount);
+    expect(
+      data.destinations.every(
+        ({ id, regionId }) => regionId === "jawa" && !sampleIds.has(id),
+      ),
+    ).toBe(true);
+    expect(new Set(data.destinations.map(({ cityId }) => cityId)).size).toBe(
+      catalogs.nature.length,
+    );
+    expect(
+      data.destinations.some(({ name }) => name === "Danau Singkarak Karawang"),
+    ).toBe(false);
+  });
+  it("provides a directory with addresses for every industry program", () => {
+    expect(Object.keys(industry.programs)).toEqual(
+      catalogs.industry.map(({ name }) => name),
+    );
+    const siteIndex: Record<string, { location: string; source: string }> =
+      industry.sites;
+    const ids = Object.values(industry.programs).flat();
+    expect(new Set(ids)).toEqual(new Set(Object.keys(siteIndex)));
+    for (const id of ids) {
+      expect(siteIndex[id].location).toBeTruthy();
+      expect(siteIndex[id].source).toMatch(/^https:\/\//);
+    }
   });
   it("every map region has geometry, cities and destinations", () => {
     for (const region of mockData.regions) {

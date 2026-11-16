@@ -34,17 +34,20 @@ Workflow `.github/workflows/deploy.yml` memasang dependency dengan `npm ci`, men
 
 `vite.config.ts` memakai base `/meputrip-new/`. `assetUrl` menambahkan base pada gambar lokal saat dirender, sehingga data mock dan Sheets tetap memakai `/images/nama.jpg`; URL HTTPS tidak diubah. Jangan menambahkan nama repository ke data CSV. Jika memakai custom domain atau repository `hmzahiqball.github.io`, ubah base menjadi `/`, lalu build dan deploy ulang. Navigasi memakai hash route (`#/pesan-perjalanan`, `#/profil-mepu`, `#/review-dokumentasi`), sehingga tautan langsung dan refresh tetap berfungsi tanpa fallback SPA `404.html`.
 
-Deployment default memakai mock data. File `.env.local` tidak diunggah ke GitHub. Untuk konfigurasi Sheets/WhatsApp nantinya, tambahkan variabel publik `VITE_` yang diperlukan pada langkah build workflow sesuai `.env.example`; jangan memasukkan secret atau service account. Panduan resmi: [Vite GitHub Pages](https://vite.dev/guide/static-deploy#github-pages).
+Deploy default memakai katalog lokal dengan konfigurasi `VITE_DATA_SOURCE=mock`. File `.env.local` tidak diunggah ke GitHub. Untuk konfigurasi Sheets/WhatsApp nantinya, tambahkan variabel publik `VITE_` yang diperlukan pada langkah build workflow sesuai `.env.example`; jangan memasukkan secret atau service account. Panduan resmi: [Vite GitHub Pages](https://vite.dev/guide/static-deploy#github-pages).
 
 ## Halaman
 
-- `#/pesan-perjalanan`: peta interaktif, destinasi, Katalog Pulau Jawa, contoh paket perjalanan, open trip, dan custom trip.
+- `#/pesan-perjalanan`: peta interaktif, katalog wisata yang dibuka dari titik kawasan, contoh paket perjalanan, open trip, dan custom trip.
+- `#/kunjungan-industri`: pilihan 12 jurusan, fokus studi, kartu perusahaan dan instansi, alamat rujukan, dan konsultasi.
 - `#/profil-mepu`: profil, visi/misi, nilai layanan, legalitas, dan kontak melalui footer.
-- `#/review-dokumentasi`: review dan galeri ilustrasi destinasi. Ulasan dummy serta foto ilustrasi tetap diberi label sesuai sumber data.
+- `#/review-dokumentasi`: ulasan dan galeri foto dari katalog destinasi. Ulasan contoh diberi label.
 
 Tautan ke bagian tertentu memakai format `#/pesan-perjalanan/open-trip` atau `#/profil-mepu/legalitas`.
 
-Katalog Pulau Jawa tersedia di `#/pesan-perjalanan/katalog-jawa`. Konten web ada di `src/data/javaCatalogs.json` dan kedua PDF sumber ada di `public/katalog/`. Perbarui keduanya saat katalog direvisi. Katalog ini tersedia dalam mode data lokal dan Google Sheets.
+Untuk melihat wisata Jawa, pilih Jawa pada peta, lalu pilih salah satu dari 15 kawasan. Tautan lama `#/pesan-perjalanan/katalog-jawa` tetap membuka peta. Mode lokal memakai entri PDF dari `src/data/javaCatalogs.json` dan koordinat perwakilan dari `src/data/tourismAreas.json`. Pulau tanpa data katalog menampilkan status belum tersedia. Mode Sheets mengambil lokasi dan destinasi dari tab `cities` dan `destinations`.
+
+Katalog industri memakai pilihan lokasi di `src/data/industryLocations.json` beserta tautan sumber per instansi. Alamat kantor atau kawasan industri membantu perencanaan. Unit dan akses kunjungan mengikuti konfirmasi pihak penerima. Kedua PDF asli ada di `public/katalog/`. Foto publik yang digunakan ada di `public/images/catalog/`, dengan atribusi dan lisensi di `src/data/catalogPhotos.json`.
 
 Untuk menambahkan surat legalitas, simpan versi PDF yang disetujui untuk publik di `public/legalitas/nama-dokumen.pdf`. Isi `title`, `status`, dan `url: "/legalitas/nama-dokumen.pdf"` pada entri `legal` di `src/data/mock.ts` atau kolom setara pada tab `legal` jika memakai Sheets. URL HTTPS publik juga bisa dipakai sebagai nilai `url`.
 
@@ -109,12 +112,12 @@ node scripts/export-sheet-templates.mjs
 
 Periksa siluet dan pengelompokan setelah mengganti dataset. Sumber serta lisensi: [ASSET_SOURCES.md](docs/ASSET_SOURCES.md).
 
-Koordinat 24 lokasi katalog berasal dari GeoNames dan tersimpan lokal di `src/data/cityLocations.json`. Zoom memakai bounds pulau dan titik lokasi, dengan label 44px yang terpisah dari skala kamera. Label digeser untuk menghindari tumpang tindih dan dihubungkan ke titik geografis dengan garis. Titik ini mewakili lokasi katalog, **bukan semua kota/kabupaten atau poligon batas administratif**. Data Sheets tanpa koordinat tetap dapat dipilih melalui daftar/dropdown; titik tidak dibuat dengan posisi rekaan.
+Titik pada peta wisata lokal mewakili 15 kawasan katalog Jawa. Sumber setiap koordinat ada di `src/data/tourismAreas.json`. Zoom memakai batas pulau dan titik lokasi, dengan label 44px yang terpisah dari skala kamera. Label digeser untuk menghindari tumpang tindih dan dihubungkan ke titik geografis dengan garis. Lokasi Sheets tanpa koordinat dapat dipilih melalui daftar dan dropdown.
 
 ## Sudah berfungsi
 
 - Delapan wilayah SVG terpisah; hover, label, active state, reveal bertahap, reduced motion.
-- 24 lokasi, 28 destinasi, 8 contoh paket; pulau → zoom → titik kota/kabupaten/kawasan → katalog; kategori dan filter paket.
+- 15 kawasan wisata Jawa dan katalog kunjungan untuk 12 jurusan. Contoh paket masih memakai data demo.
 - Detail destinasi dan paket, daftar open trip, custom inquiry dengan preview pesan.
 - Navigasi desktop/mobile; profil, visi/misi, nilai layanan, legalitas, testimoni, kontak/footer.
 - Repository mock dan adapter publikasi CSV Google Sheets; validasi ID, relasi, tipe, URL gambar; loading/error/empty/retry.
@@ -123,7 +126,7 @@ Koordinat 24 lokasi katalog berasal dari GeoNames dan tersimpan lokal di `src/da
 
 - Draft profil dan janji layanan.
 - Harga, tanggal keberangkatan, ketersediaan, fasilitas, kontak, alamat, jam operasional, dokumen legal.
-- Testimoni diberi label dummy; foto diberi label ilustrasi dan bisa berbeda dari destinasi spesifik.
+- Testimoni contoh dan foto ilustrasi paket. Foto destinasi lokal tersedia sesuai cakupan katalog foto berlisensi.
 - Tidak ada pemesanan, pembayaran, admin dashboard, atau data pengguna tersimpan.
 - Data Sheets publik dapat dibaca siapa pun. Konten privat membutuhkan proxy/backend berautentikasi di tahap lanjutan.
 - State pilihan disimpan selama halaman aktif; reload kembali ke tampilan awal.

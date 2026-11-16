@@ -1,5 +1,6 @@
 import type { City, TravelData, TravelRepository } from "../types/travel";
 import { mockData } from "../data/mock";
+import { tourismCities, tourismDestinations } from "../data/tourismCatalog";
 import { config } from "../config/site";
 import { parseCsv } from "./csv";
 type Row = Record<string, string>;
@@ -72,7 +73,10 @@ export function validateData(data: TravelData): TravelData {
   for (const item of [...data.destinations, ...data.packages]) {
     if (cityMap.get(item.cityId)?.regionId !== item.regionId)
       throw Error("Relasi destinasi/paket ke kota dan wilayah tidak valid.");
-    if (!/^(https:\/\/|\/images\/)/.test(item.image))
+    if (
+      (item.image || "type" in item) &&
+      !/^(https:\/\/|\/images\/)/.test(item.image ?? "")
+    )
       throw Error("URL foto harus HTTPS atau /images/.");
   }
   return data;
@@ -204,7 +208,11 @@ export const sheetsRepository: TravelRepository = {
 };
 export const mockRepository: TravelRepository = {
   async load() {
-    return validateData(mockData);
+    return validateData({
+      ...mockData,
+      cities: [...mockData.cities, ...tourismCities],
+      destinations: tourismDestinations,
+    });
   },
 };
 export const repository: TravelRepository =

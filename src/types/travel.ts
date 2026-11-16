@@ -11,6 +11,7 @@ export interface City {
   latitude?: number;
   longitude?: number;
   kind?: "kota" | "kabupaten" | "kawasan";
+  description?: string;
 }
 export interface Destination {
   id: string;
@@ -19,8 +20,17 @@ export interface Destination {
   name: string;
   description: string;
   category: string;
-  image: string;
+  image?: string;
   imageAlt: string;
+  photoCredit?: PhotoCredit;
+  mapQuery?: string;
+}
+export interface PhotoCredit {
+  title: string;
+  author: string;
+  source: string;
+  license: string;
+  licenseUrl: string;
 }
 export interface TripPackage {
   id: string;

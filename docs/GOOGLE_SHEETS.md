@@ -39,7 +39,7 @@ Perubahan publikasi Google dapat memerlukan waktu untuk muncul. Adapter melakuka
 
 `regions.id` harus salah satu dari delapan ID yang tersedia di peta. `cityId` dan `regionId` pada destinasi/paket harus cocok. `type` hanya `open` atau `private`. `rating` bilangan bulat 1–5 dan `isDemo` teks `true`/`false`. Pertahankan `true` untuk contoh ulasan; jangan mengubahnya menjadi ulasan sungguhan tanpa sumber pelanggan nyata.
 
-Gambar dapat memakai URL HTTPS publik atau `/images/nama.jpg` untuk aset build lokal. Template menggunakan aset lokal yang sudah disertakan. `legal.url` boleh kosong atau diisi dengan URL HTTPS publik maupun path PDF lokal seperti `/legalitas/nama-dokumen.pdf`. Simpan PDF lokal di `public/legalitas/` dan pakai nama file tanpa spasi. Untuk `contact.instagram`, masukkan URL HTTPS Instagram. Kontak opsional boleh kosong. URL WhatsApp dibuat setelah nomor publik valid diisi.
+Gambar dapat memakai URL HTTPS publik atau `/images/nama.jpg` untuk aset build lokal. Destinasi dengan kolom `image` kosong menampilkan kartu tanpa foto. Template menggunakan aset lokal yang sudah disertakan. `legal.url` boleh kosong atau diisi dengan URL HTTPS publik maupun path PDF lokal seperti `/legalitas/nama-dokumen.pdf`. Simpan PDF lokal di `public/legalitas/` dan pakai nama file tanpa spasi. Untuk `contact.instagram`, masukkan URL HTTPS Instagram. Kontak opsional boleh kosong. URL WhatsApp dibuat setelah nomor publik valid diisi.
 
 ## Error dan fallback
 

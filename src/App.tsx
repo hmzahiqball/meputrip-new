@@ -1,11 +1,11 @@
 import { assetUrl } from "./utils/assetUrl";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { ArrowUpRight, RefreshCw, Compass, Clock } from "lucide-react";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import CatalogPhoto from "./components/CatalogPhoto";
 import Inquiry from "./components/Inquiry";
 import Explorer from "./sections/Explorer";
-import JavaCatalogs from "./sections/JavaCatalogs";
 import TripSections from "./sections/TripSections";
 import ProfilePage from "./sections/ProfilePage";
 import ReviewsPage from "./sections/ReviewsPage";
@@ -14,7 +14,11 @@ import { usePageRoute } from "./hooks/usePageRoute";
 import { pages } from "./utils/navigation";
 import { useTravelData } from "./hooks/useTravelData";
 import { config } from "./config/site";
+import { mapLink } from "./utils/mapLink";
 import type { Destination, TripPackage } from "./types/travel";
+
+const IndustryCatalog = lazy(() => import("./sections/IndustryCatalog"));
+
 export default function App() {
   const { data, error, retry } = useTravelData();
   const { page, anchor } = usePageRoute();
@@ -73,13 +77,23 @@ export default function App() {
             {page === "pesan-perjalanan" && (
               <>
                 <Explorer data={data} onDetail={setDestination} />
-                <JavaCatalogs onInquiry={inquire} />
                 <TripSections
                   data={data}
                   onTrip={setTrip}
                   onInquiry={inquire}
                 />
               </>
+            )}
+            {page === "kunjungan-industri" && (
+              <Suspense
+                fallback={
+                  <p className="section" role="status">
+                    Memuat katalog kunjungan industri…
+                  </p>
+                }
+              >
+                <IndustryCatalog onInquiry={inquire} />
+              </Suspense>
             )}
             {page === "profil-mepu" && <ProfilePage data={data} />}
             {page === "review-dokumentasi" && <ReviewsPage data={data} />}
@@ -89,22 +103,35 @@ export default function App() {
       {data && <Footer key={page} data={data} onInquiry={inquire} />}
       {destination && data && (
         <Modal title={destination.name} onClose={() => setDestination(null)}>
-          <img
-            className="modal-photo"
-            src={assetUrl(destination.image)}
-            alt={destination.imageAlt}
-          />
+          {destination.image && (
+            <CatalogPhoto
+              image={destination.image}
+              alt={destination.imageAlt}
+              credit={destination.photoCredit}
+            />
+          )}
           <p className="eyebrow olive">
             {data.cities.find((c) => c.id === destination.cityId)?.name} /{" "}
             {data.regions.find((r) => r.id === destination.regionId)?.name} /{" "}
             {destination.category}
           </p>
-          <p>{destination.description}</p>
+          {destination.description && <p>{destination.description}</p>}
+          {destination.mapQuery && (
+            <a
+              className="text-link"
+              href={mapLink(destination.mapQuery)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buka lokasi di Google Maps <ArrowUpRight size={15} />
+            </a>
+          )}
           <p className="muted">
-            Inspirasi destinasi prototype. Foto ilustrasi. Itinerary, akses,
-            tiket, dan fasilitas perlu dikonfirmasi sebelum perjalanan.
+            Konfirmasikan akses, tiket, dan fasilitas sebelum perjalanan.
           </p>
-          <h3>Paket terkait</h3>
+          {data.packages.some((p) => p.cityId === destination.cityId) && (
+            <h3>Paket terkait</h3>
+          )}
           {data.packages
             .filter((p) => p.cityId === destination.cityId)
             .map((p) => (
@@ -120,12 +147,6 @@ export default function App() {
                 <ArrowUpRight size={16} />
               </button>
             ))}
-          {!data.packages.some((p) => p.cityId === destination.cityId) && (
-            <p className="muted">
-              Paket kota ini belum tersedia. Gunakan konsultasi untuk menyusun
-              custom trip.
-            </p>
-          )}
           <button className="btn red" onClick={() => inquire(destination.name)}>
             Konsultasikan destinasi <ArrowUpRight size={16} />
           </button>

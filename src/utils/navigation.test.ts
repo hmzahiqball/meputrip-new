@@ -27,5 +27,9 @@ describe("page navigation", () => {
       page: "profil-mepu",
       anchor: "legalitas",
     });
+    expect(parseRoute("#/pesan-perjalanan/katalog-jawa")).toEqual({
+      page: "pesan-perjalanan",
+      anchor: "peta-eksplorasi",
+    });
   });
 });
