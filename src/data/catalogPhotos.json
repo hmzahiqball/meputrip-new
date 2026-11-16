@@ -1,12 +1,4 @@
 {
-  "astra": {
-    "author": "MrRamChandra",
-    "image": "/images/catalog/astra.webp",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Menara_Astra.jpg",
-    "title": "Menara_Astra.jpg"
-  },
   "balekambang": {
     "author": "Bolaruwet",
     "image": "/images/catalog/balekambang.webp",
@@ -22,14 +14,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Sunrise_Batu_karas_Pangandaran.jpg",
     "title": "Sunrise_Batu_karas_Pangandaran.jpg"
-  },
-  "bei": {
-    "author": "Bursa Efek Indonesia",
-    "image": "/images/catalog/bei.webp",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Gedung-bursa-efek-1_(1).jpg",
-    "title": "Gedung-bursa-efek-1_(1).jpg"
   },
   "bromo": {
     "author": "Thomas Hirsch (= user Ravn)",
@@ -62,14 +46,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Air_Terjun_Coban_Rondo.jpg",
     "title": "Air_Terjun_Coban_Rondo.jpg"
-  },
-  "dirgantara": {
-    "author": "BxHxTxCx (using album)",
-    "image": "/images/catalog/dirgantara.webp",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:PT_Dirgantara_Indonesia_(26714037004).jpg",
-    "title": "PT Dirgantara Indonesia (26714037004).jpg"
   },
   "goa-pindul": {
     "author": "Tommy Gustaviano Yeza",
@@ -150,14 +126,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Dusk_till_dawn_(cropped).jpg",
     "title": "Dusk_till_dawn_(cropped).jpg"
-  },
-  "pupuk-kujang": {
-    "author": "Ojiedarojie",
-    "image": "/images/catalog/pupuk-kujang.webp",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Kawasan_PT_Pupuk_Kujang_Cikampek.jpg",
-    "title": "Kawasan PT Pupuk Kujang Cikampek.jpg"
   },
   "pura-poten": {
     "author": "Stegop",

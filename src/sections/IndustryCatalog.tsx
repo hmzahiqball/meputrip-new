@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import CatalogCard from "../components/CatalogCard";
-import CatalogPhoto from "../components/CatalogPhoto";
+import CatalogPhoto, { PhotoReferenceLink } from "../components/CatalogPhoto";
 import Modal from "../components/Modal";
 import catalogs from "../data/javaCatalogs.json";
 import industry from "../data/industryLocations.json";
-import { catalogPhotos } from "../data/catalogPhotos";
+import industryPhotos from "../data/industryPhotos.json";
+import type { PhotoCredit } from "../types/travel";
 import { assetUrl } from "../utils/assetUrl";
 import { mapLink } from "../utils/mapLink";
 
@@ -15,10 +16,13 @@ interface VisitSite {
   source?: string;
   mapQuery?: string;
   note?: string;
+  photoReference?: string;
 }
 
 const siteIndex: Record<string, VisitSite> = industry.sites;
 const programs: Record<string, string[]> = industry.programs;
+const photos: Partial<Record<string, PhotoCredit & { image: string }>> =
+  industryPhotos;
 
 export default function IndustryCatalog({
   onInquiry,
@@ -29,7 +33,7 @@ export default function IndustryCatalog({
   const [siteId, setSiteId] = useState("");
   const program = catalogs.industry.find(({ name }) => name === programName);
   const site = siteIndex[siteId];
-  const photo = catalogPhotos[siteId];
+  const photo = photos[siteId];
 
   return (
     <>
@@ -80,9 +84,10 @@ export default function IndustryCatalog({
                   name={siteIndex[id].name}
                   location={siteIndex[id].location}
                   category="Kunjungan industri"
-                  image={catalogPhotos[id]?.image}
-                  imageAlt={siteIndex[id].name}
-                  photoCredit={catalogPhotos[id]}
+                  image={photos[id]?.image}
+                  imageAlt={photos[id]?.caption ?? siteIndex[id].name}
+                  photoCredit={photos[id]}
+                  photoReference={siteIndex[id].photoReference}
                   onDetail={() => setSiteId(id)}
                 />
               ))}
@@ -93,7 +98,11 @@ export default function IndustryCatalog({
       {site && program && (
         <Modal title={site.name} onClose={() => setSiteId("")}>
           {photo && (
-            <CatalogPhoto image={photo.image} alt={site.name} credit={photo} />
+            <CatalogPhoto
+              image={photo.image}
+              alt={photo.caption ?? site.name}
+              credit={photo}
+            />
           )}
           <p className="eyebrow olive">{program.name}</p>
           <p className="industry-address">
@@ -101,6 +110,9 @@ export default function IndustryCatalog({
           </p>
           {site.note && <p>{site.note}</p>}
           <div className="industry-links">
+            {site.photoReference && (
+              <PhotoReferenceLink href={site.photoReference} name={site.name} />
+            )}
             {site.mapQuery && (
               <a
                 className="text-link"

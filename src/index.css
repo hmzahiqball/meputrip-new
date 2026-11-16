@@ -645,6 +645,10 @@ section {
   font-size: 10px;
   overflow-wrap: anywhere;
 }
+.catalog-photo-caption {
+  display: block;
+  font-weight: 600;
+}
 .industry-catalog h1 {
   font-size: clamp(36px, 6vw, 76px);
 }

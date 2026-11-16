@@ -26,6 +26,7 @@ export interface Destination {
   mapQuery?: string;
 }
 export interface PhotoCredit {
+  caption?: string;
   title: string;
   author: string;
   source: string;

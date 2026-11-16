@@ -1,7 +1,7 @@
 import { assetUrl } from "../utils/assetUrl";
 import Reveal from "./Reveal";
 import { ArrowUpRight, MapPin } from "lucide-react";
-import { PhotoAttribution } from "./CatalogPhoto";
+import { PhotoAttribution, PhotoReferenceLink } from "./CatalogPhoto";
 import type { PhotoCredit } from "../types/travel";
 export default function CatalogCard({
   name,
@@ -11,6 +11,7 @@ export default function CatalogCard({
   image,
   imageAlt,
   photoCredit,
+  photoReference,
   onDetail,
 }: {
   name: string;
@@ -20,6 +21,7 @@ export default function CatalogCard({
   image?: string;
   imageAlt: string;
   photoCredit?: PhotoCredit;
+  photoReference?: string;
   onDetail: () => void;
 }) {
   return (
@@ -34,7 +36,9 @@ export default function CatalogCard({
         ) : (
           <span className="catalog-no-photo" aria-hidden="true">
             <MapPin size={42} strokeWidth={1.2} />
-            Foto belum tersedia
+            {photoReference
+              ? "Foto tersedia di situs sumber"
+              : "Foto belum tersedia"}
           </span>
         )}
         <span className="image-tag">{category}</span>
@@ -55,6 +59,11 @@ export default function CatalogCard({
         <small className="catalog-card-credit">
           <PhotoAttribution credit={photoCredit} />
         </small>
+      )}
+      {!image && photoReference && (
+        <div>
+          <PhotoReferenceLink href={photoReference} name={name} />
+        </div>
       )}
     </Reveal>
   );
